@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  tfg-encuadres:
+    image: ghcr.io/mcrism/encuadres:latest
+    build:
+      context: ./
+    container_name: tfg-encuadres
+    ports:
+      - 8080:8080
