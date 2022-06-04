@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
 import Comic from '@/components/Comic.vue'
+import Comic2 from '@/components/Comic2.vue'
 
 </script>
 
@@ -19,7 +20,8 @@ import Comic from '@/components/Comic.vue'
     </div>
   </header> -->
   <div class="columnas">
-    <img alt="Introduccion" class="portada" src="@/assets/PortadaConTexto.png"/>
+    <img alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
+    <!--<Comic2 />-->
     <Comic />
   </div>
   <RouterView />
@@ -29,8 +31,7 @@ import Comic from '@/components/Comic.vue'
 @import '@/assets/base.css';
 
 #app {
-  width: 1366px;
-  height: 1024px;
+  min-width: 768;
   margin: 0px;
   padding: 0rem;
 
