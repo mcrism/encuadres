@@ -19,50 +19,40 @@ import Comic2 from '@/components/Comic2.vue'
       </nav>
     </div>
   </header> -->
+  <div class="body">
   <div class="columnas">
     <img alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
     <!--<Comic2 />-->
     <Comic />
   </div>
   <RouterView />
+  </div>
 </template>
 
 <style>
 @import '@/assets/base.css';
 
 #app {
-  min-width: 768;
+  width: 100%;
+  max-width: 1366px;
   margin: 0px;
   padding: 0rem;
-
   font-weight: normal;
 }
 
-  #app {
-    display: block;
-    padding: 0 0rem;
-  }
+body {
+max-width: max-content;
+margin: auto;
+}
 
-  .portada {
+
+.portada {
     width: 100%;
-    margin-top: 0px;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
   }
 
-  .title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-  }
 .columnas {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-.comic {
-  margin-top: 0px;
-
 }
 </style>
