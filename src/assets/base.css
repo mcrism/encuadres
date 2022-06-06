@@ -19,6 +19,9 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --color-dark-yellow: #fddd50;
+  --color-yellow: #ffea64;
 }
 
 /* semantic color variables for this project */
@@ -62,7 +65,10 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background-color: var(--color-yellow) ;
+  background-image: radial-gradient(var(--color-dark-yellow) 15%, transparent 16%), radial-gradient(var(--color-dark-yellow) 15%, transparent 16%);
+  background-size:20px 20px;
+  background-position: 0 0, 10px 10px;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -71,4 +77,5 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }

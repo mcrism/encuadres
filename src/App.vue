@@ -41,8 +41,13 @@ import Comic2 from '@/components/Comic2.vue'
 }
 
 body {
-max-width: max-content;
-margin: auto;
+  max-width: max-content;
+  margin: auto;
+}
+
+:focus {
+  outline: 2px dotted;
+  outline-offset: 0.125rem;
 }
 
 
