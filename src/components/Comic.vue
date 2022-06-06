@@ -57,17 +57,26 @@ export default {
     <!-- <img alt="6" class="vineta" src="../assets/Vinetas/.png" />
     <img alt="6" class="vineta" src="../assets/Vinetas/.png" /> -->
     <img alt="14" class="vineta" src="../assets/Vinetas/14.png" />
+    <img alt="21" class="vineta-estandar" src="../assets/Vinetas/21_Vineta21.gif" />
   </div>
 </template>
 
 <style scoped>
+
+
 .vertical {
   display: flex;
   flex-direction: column;
+  background-color: var(--color-yellow);
+  background-image: radial-gradient(var(--color-dark-yellow) 20%, transparent 0), radial-gradient(var(--color-dark-yellow) 20%, transparent 0);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  background-color: white;
+  background-image: none;
 }
 
 .vineta-estandar {
-  width: 100%;
+  max-width: 1366px;
 }
 
 .vineta-solape-superior {
