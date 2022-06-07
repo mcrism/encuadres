@@ -1,9 +1,12 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import Camera from "@/components/Camera.vue";
 
 export default defineComponent({
   name: "Comic",
-  components: {},
+  components: {
+    Camera,
+  },
   data() {
     return {
       control_vineta5: true,
@@ -162,27 +165,8 @@ export default defineComponent({
         src="../assets/Vinetas/15_Vineta15_3.gif"
       />
     </div>
-    <!-- <div
-      v-if="control_vineta15"
-      @click="control_vineta15 = !control_vineta15"
-    >
-      <img
-        loading="lazy"
-        alt="15_2"
-        class="vineta-mitad-horizontal"
-        src="../assets/Vinetas/15_Vineta15_2.png"
-      />
     </div>
-    <div v-else class="vineta-vacia" @click="mostrarVineta15()">
-      <img
-        loading="lazy"
-        alt="15_3"
-        id="vineta_15_3"
-        class="vineta-mitad-horizontal"
-        src="../assets/Vinetas/15_Vineta15_3.gif"
-      />
-    </div> -->
-    </div>
+    <Camera></Camera>
   </div>
 </template>
 
