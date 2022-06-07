@@ -129,55 +129,19 @@ export default defineComponent({
       loading="lazy"
       alt="12"
       class="vineta-estandar"
-      src="../assets/Vinetas/12.png"
+      src="../assets/Vinetas/12_Vineta12.png"
     />
-    <img
-      loading="lazy"
-      alt="6"
-      class="vineta-estandar"
-      src="../assets/Vinetas/15.gif"
-    />
-    <div class="horizontales">
-      <img
-        loading="lazy"
-        alt="16"
-        class="vineta-media"
-        src="../assets/Vinetas/16_2.png"
-      />
-      <div v-if="controlPrimeraCamara">
-        <img
-          loading="lazy"
-          alt="16"
-          class="vineta-media-vacia"
-          src="../assets/Vinetas/16_1.png"
-        />
-      </div>
-      <div v-else>
-        <img
-          loading="lazy"
-          alt="16"
-          class="vineta-media-vacia"
-          src="../assets/Vinetas/16.gif"
-        />
-      </div>
-    </div>
     <img
       loading="lazy"
       alt="13"
-      class="vineta"
-      src="../assets/Vinetas/13.png"
+      class="vineta-estandar"
+      src="../assets/Vinetas/13_Vineta13.png"
     />
-    <img
+     <img
       loading="lazy"
       alt="14"
-      class="vineta"
-      src="../assets/Vinetas/14.png"
-    />
-    <img
-      loading="lazy"
-      alt="21"
       class="vineta-estandar"
-      src="../assets/Vinetas/21_Vineta21.gif"
+      src="../assets/Vinetas/14_Vineta14.gif"
     />
   </div>
 </template>
