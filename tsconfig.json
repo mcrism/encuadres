@@ -6,12 +6,20 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
   },
   "noImplicitThis": false,
   "references": [
     {
       "path": "./tsconfig.vite-config.json"
     }
+  ],
+  "files": [
+    "./src/shims-vue.d.ts",
+    "./src/vuex-shim.d.ts"
   ]
+  
 }

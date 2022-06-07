@@ -1,32 +1,45 @@
 <script lang="ts">
 
-//import Vue from 'vue'
+import { defineComponent } from 'vue';
 
-// @ts-ignore
 //import VueVirtualScroller from 'vue-virtual-scroller'
 
-export default {
+export default defineComponent({
+  name: 'Comic',
   data () {
     return {
       control_vineta5: true,
       controlPrimeraCamara: true,
-    };
+    }
+  },
+  methods: {
+    vineta5() {
+      return '../assets/Vinetas/5_2.gif?a=${Math.random()}';
+    },
+    metodo_prueba() {
+      this.control_vineta5
+    },
+    restartGIF(id: string, url: string) {
+      var img = document.getElementById(id);
+      console.log("El elemento que obtengo del documento es ", img);
+      const prueba = !this.control_vineta5;
+/*       if (img) {
+        img.src = "";
+        img.src = url;
+      } */
+    },
   },
   components: {
     //VueVirtualScroller,
   },
-  methods: {
-    // vineta5: function() {
-    //   return '../assets/Vinetas/5_2.gif?a=${Math.random()}';
-    // }
-  },
   computed: {
-    // random5(): string {
-    //   return "../assets/Vinetas/5_2.gif";
-    // }
+    random5(): string {
+      return "../assets/Vinetas/5_2.gif";
+    },
   }
-};
+});
 </script>
+
 
 <template>
   <div class="vertical">
@@ -35,11 +48,11 @@ export default {
     <img alt="2" class="vineta-solape-superior" src="../assets/Vinetas/2_Vineta2.png" />
     <img alt="3" class="vineta-media" src="../assets/Vinetas/3_Vineta3.gif" />
     <img alt="4" class="vineta-media" src="../assets/Vinetas/4_Vineta4.png" />
-    <div class="vineta-vacia" v-if="control_vineta5" @click="control_vineta5=!control_vineta5">
+    <div class="vineta-vacia" v-if="control_vineta5" @click="restartGIF('gif52','../assets/Vinetas/5_2.gif')" >
       <img alt="5_1" class="vineta-estandar" src="../assets/Vinetas/5_1.gif" />
     </div>
     <div v-else class="vineta-vacia" @click="control_vineta5=!control_vineta5">
-      <img id="gif-5-2" alt="5_2" class="vineta-estandar" src="../assets/Vinetas/5_2.gif">
+      <img id="gif52" alt="5_2" class="vineta-estandar" src="../assets/Vinetas/5_2.gif">
     </div>
     <img alt="6" class="vineta-estandar" src="../assets/Vinetas/6_Vineta6.png" />
     <img alt="7" class="vineta-estandar" src="../assets/Vinetas/7_Vineta7.png" />
@@ -51,14 +64,14 @@ export default {
     <img alt="6" class="vineta-estandar" src="../assets/Vinetas/15.gif" />
     <div class="horizontales">
       <img alt="16" class="vineta-media" src="../assets/Vinetas/16_2.png" />
-      <div v-if="controlPrimeraCamara" @click="cambioControlPrimeraCamara">
+      <div v-if="controlPrimeraCamara">
         <img
           alt="16"
           class="vineta-media-vacia"
           src="../assets/Vinetas/16_1.png"
         />
       </div>
-      <div v-else @click="cambioControlPrimeraCamara">
+      <div v-else>
         <img
           alt="16"
           class="vineta-media-vacia"
