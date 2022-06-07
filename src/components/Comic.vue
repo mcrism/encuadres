@@ -16,18 +16,25 @@ export default defineComponent({
     vineta5() {
       return '../assets/Vinetas/5_2.gif?a=${Math.random()}';
     },
-    metodo_prueba() {
-      this.control_vineta5
-    },
+
     restartGIF(id: string, url: string) {
-      var img = document.getElementById(id);
-      console.log("El elemento que obtengo del documento es ", img);
+      console.log("El id que obtengo es ", id);
+      const divImg = document.getElementById('vineta1');
+      console.log("El elemento que obtengo del documento es ", divImg);
       const prueba = !this.control_vineta5;
-/*       if (img) {
-        img.src = "";
-        img.src = url;
-      } */
+      if (divImg) {
+        //  img.src = "";
+        //  img.src = url;
+        divImg.setAttribute("src", "");
+        divImg.setAttribute("src", url);
+      }
     },
+
+    mostrarVineta5(): void {
+      this.control_vineta5 = !this.control_vineta5;
+      this.restartGIF('gif52', "../assets/Vinetas/5_2.gif");
+    }
+
   },
   components: {
     //VueVirtualScroller,
@@ -44,15 +51,15 @@ export default defineComponent({
 <template>
   <div class="vertical">
     
-    <img alt="1" class="vineta-estandar" src="../assets/Vinetas/1_Vineta1.png" />
+    <img id="vineta1" alt="1" class="vineta-estandar" src="../assets/Vinetas/1_Vineta1.png" />
     <img alt="2" class="vineta-solape-superior" src="../assets/Vinetas/2_Vineta2.png" />
     <img alt="3" class="vineta-media" src="../assets/Vinetas/3_Vineta3.gif" />
     <img alt="4" class="vineta-media" src="../assets/Vinetas/4_Vineta4.png" />
-    <div class="vineta-vacia" v-if="control_vineta5" @click="restartGIF('gif52','../assets/Vinetas/5_2.gif')" >
+    <div class="vineta-vacia" v-if="control_vineta5" @click="control_vineta5=!control_vineta5" >
       <img alt="5_1" class="vineta-estandar" src="../assets/Vinetas/5_1.gif" />
     </div>
-    <div v-else class="vineta-vacia" @click="control_vineta5=!control_vineta5">
-      <img id="gif52" alt="5_2" class="vineta-estandar" src="../assets/Vinetas/5_2.gif">
+    <div v-else class="vineta-vacia" @click="mostrarVineta5()">
+      <img alt="5_2" class="vineta-estandar" src="../assets/Vinetas/5_2.gif">
     </div>
     <img alt="6" class="vineta-estandar" src="../assets/Vinetas/6_Vineta6.png" />
     <img alt="7" class="vineta-estandar" src="../assets/Vinetas/7_Vineta7.png" />
