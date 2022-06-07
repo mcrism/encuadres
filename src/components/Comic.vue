@@ -167,8 +167,6 @@ export default defineComponent({
       class="vineta"
       src="../assets/Vinetas/13.png"
     />
-    <img loading="lazy" alt="6" class="vineta" src="../assets/Vinetas/.png" />
-    <img loading="lazy" alt="6" class="vineta" src="../assets/Vinetas/.png" />
     <img
       loading="lazy"
       alt="14"

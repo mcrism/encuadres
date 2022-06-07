@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
 import Comic from '@/components/Comic.vue'
-import Comic2 from '@/components/Comic2.vue'
 
 </script>
 
