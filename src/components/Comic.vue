@@ -7,22 +7,13 @@ export default defineComponent({
   data() {
     return {
       control_vineta5: true,
-      controlPrimeraCamara: true,
+      control_vineta15: true,
     };
   },
   methods: {
-    vineta5() {
-      return "../assets/Vinetas/5_2.gif?a=${Math.random()}";
-    },
-
     restartGIF(id: string, url: string) {
-      console.log("El id que obtengo es ", id);
-      const divImg = document.getElementById("vineta1");
-      console.log("El elemento que obtengo del documento es ", divImg);
-      const prueba = !this.control_vineta5;
+      const divImg = document.getElementById(id);
       if (divImg) {
-        //  img.src = "";
-        //  img.src = url;
         divImg.setAttribute("src", "");
         divImg.setAttribute("src", url);
       }
@@ -30,13 +21,15 @@ export default defineComponent({
 
     mostrarVineta5(): void {
       this.control_vineta5 = !this.control_vineta5;
-      this.restartGIF("gif52", "../assets/Vinetas/5_2.gif");
+      this.restartGIF("vineta_5_2", "../assets/Vinetas/5_2.gif");
+    },
+     mostrarVineta15(): void {
+      this.control_vineta15 = !this.control_vineta15;
+      this.restartGIF("vineta_15_3", "../assets/Vinetas/15_3.gif");
     },
   },
   computed: {
-    random5(): string {
-      return "../assets/Vinetas/5_2.gif";
-    },
+
   },
 });
 </script>
@@ -84,6 +77,7 @@ export default defineComponent({
     <div v-else class="vineta-vacia" @click="mostrarVineta5()">
       <img
         loading="lazy"
+        id="vineta_5_2"
         alt="5_2"
         class="vineta-estandar"
         src="../assets/Vinetas/5_2.gif"
@@ -143,6 +137,52 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/14_Vineta14.gif"
     />
+    <div class="horizontales">
+      <img
+      loading="lazy"
+      alt="15_1"
+      class="vineta-mitad-horizontal"
+      src="../assets/Vinetas/15_Vineta15_1.png"
+    />
+    <div v-if="control_vineta15"
+      @click="control_vineta15 = !control_vineta15">
+    <img
+        loading="lazy"
+        alt="15_2"
+        class="vineta-mitad-horizontal-interactiva"
+        src="../assets/Vinetas/15_Vineta15_2.png"
+      />
+      </div>
+      <div v-else  @click="mostrarVineta15()">
+      <img
+        loading="lazy"
+        alt="15_3"
+        id="vineta_15_3"
+        class="vineta-mitad-horizontal-interactiva"
+        src="../assets/Vinetas/15_Vineta15_3.gif"
+      />
+    </div>
+    <!-- <div
+      v-if="control_vineta15"
+      @click="control_vineta15 = !control_vineta15"
+    >
+      <img
+        loading="lazy"
+        alt="15_2"
+        class="vineta-mitad-horizontal"
+        src="../assets/Vinetas/15_Vineta15_2.png"
+      />
+    </div>
+    <div v-else class="vineta-vacia" @click="mostrarVineta15()">
+      <img
+        loading="lazy"
+        alt="15_3"
+        id="vineta_15_3"
+        class="vineta-mitad-horizontal"
+        src="../assets/Vinetas/15_Vineta15_3.gif"
+      />
+    </div> -->
+    </div>
   </div>
 </template>
 
@@ -152,7 +192,7 @@ export default defineComponent({
   flex-direction: column;
   background-color: var(--color-yellow);
   background-image: radial-gradient(var(--color-dark-yellow) 20%, transparent 0),
-    radial-gradient(var(--color-dark-yellow) 20%, transparent 0);
+  radial-gradient(var(--color-dark-yellow) 20%, transparent 0);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
   background-color: white;
@@ -187,5 +227,14 @@ export default defineComponent({
 
 .vineta-media-vacia {
   max-height: 1024px;
+}
+
+.vineta-mitad-horizontal {
+  width: 50%;
+  height: 100%;
+}
+.vineta-mitad-horizontal-interactiva {
+  width: 100%;
+  height: 100%;
 }
 </style>
