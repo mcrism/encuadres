@@ -5,6 +5,8 @@ import indiaURL from "@/assets/PersonajesCamara/IndiaPosicionada.png";
 import chuckURL from "@/assets/PersonajesCamara/ChuckPosicionado.png";
 import chuckPensamientoURL from "@/assets/PersonajesCamara/ChuckPensamiento.gif";
 import chuckDeseoURL from "@/assets/PersonajesCamara/ChuckDeseo.gif";
+import indiaPensamientoURL from "@/assets/PersonajesCamara/IndiaPensamiento.gif";
+
 
 export default defineComponent({
   name: "Camera",
@@ -33,6 +35,8 @@ export default defineComponent({
       this.mostrarPolaroid = true;
       if (this.chuckSelected) {
         this.polaroid = chuckPensamientoURL;
+      } else {
+        this.polaroid = indiaPensamientoURL;
       }
     },
     mostrarPolaroidDeseo(): void {
@@ -222,6 +226,7 @@ export default defineComponent({
   margin-right: 30px;
   color: white;
   font-size: 20px;
+  font-family: "ComicBook";
 }
 
 .texto-explicativo {
@@ -232,6 +237,7 @@ export default defineComponent({
   margin-right: 30px;
   color: white;
   opacity: 0.4;
+  font-family: "ComicBook";
 }
 .vineta-estandar {
   max-width: 1366px;

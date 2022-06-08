@@ -36,6 +36,14 @@ import Comic from '@/components/Comic.vue'
    url(./assets/fonts/CCMonsterMashMedium.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "ComicBook";
+  src: local("ComicBook"),
+   url(./assets/fonts/ComicBook.otf) format("truetype");
+}
+
+
+
 #app {
   width: 100%;
   max-width: 1366px;
