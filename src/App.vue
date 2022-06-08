@@ -30,6 +30,12 @@ import Comic from '@/components/Comic.vue'
 <style>
 @import '@/assets/base.css';
 
+@font-face {
+  font-family: "CCMonsterMashMedium";
+  src: local("CCMonsterMashMedium"),
+   url(./assets/fonts/CCMonsterMashMedium.ttf) format("truetype");
+}
+
 #app {
   width: 100%;
   max-width: 1366px;

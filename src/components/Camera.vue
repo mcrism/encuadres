@@ -1,8 +1,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import indiaURL from "@/assets/PersonajesCamara/India.png";
-import chuckURL from "@/assets/PersonajesCamara/Chuck.png";
+import indiaURL from "@/assets/PersonajesCamara/IndiaPosicionada.png";
+import chuckURL from "@/assets/PersonajesCamara/ChuckPosicionado.png";
+import chuckPensamientoURL from "@/assets/PersonajesCamara/ChuckPensamiento.gif";
+import chuckDeseoURL from "@/assets/PersonajesCamara/ChuckDeseo.gif";
 
 export default defineComponent({
   name: "Camera",
@@ -11,6 +13,11 @@ export default defineComponent({
     return {
       chuckSelected: true,
       indiaSelected: false,
+      mostrarPolaroid: false,
+      modoPensamientos: false,
+      modoDeseos: false,
+      modoPesadillas: false,
+      polaroid: "",
     };
   },
   methods: {
@@ -21,10 +28,37 @@ export default defineComponent({
     seleccionarIndia(): void {
       this.chuckSelected = false;
       this.indiaSelected = true;
+    },
+    mostrarPolaroidPensamiento(): void {
+      this.mostrarPolaroid = true;
+      if (this.chuckSelected) {
+        this.polaroid = chuckPensamientoURL;
+      }
+    },
+    mostrarPolaroidDeseo(): void {
+      this.mostrarPolaroid = true;
+      if (this.chuckSelected) {
+        this.polaroid = chuckDeseoURL;
+      }
+    },
+    cerrarPolaroid(): void {
+      this.mostrarPolaroid = false;
     }
-
   },
   computed: {
+    // polaroid(): string {
+    //   if (this.modoPensamientos) {
+    //     if (this.chuckSelected) {
+    //       return chuckPensamientoURL;
+    //     } else {
+    //       return chuckPensamientoURL;
+    //     }
+    //   }
+    //   else {
+    //     return chuckPensamientoURL;
+    //   }
+      
+    // },
     chuckClass(): string {
       if (this.chuckSelected) {
         return "active";
@@ -66,26 +100,111 @@ export default defineComponent({
 
 
 <template>
-		<div id="slider">
-
-			<div class="slider-inner">
-				<div id="slider-content">				
-				</div>
-			</div>
-
+		<div class="camera-canvas">
 			<img class="vineta-estandar" :src="personajeSeleccionado" />
-      <div class="texto-explicativo"> Cada botón es un filtro de Click. ¿Qué pasará si los pulsas? También puedes cambiar de personaje en el selector de la derecha</div>
-
+      <!-- <div class="texto-explicativo"> Cada botón es un filtro de Click. ¿Qué pasará si los pulsas? También puedes cambiar de personaje en el selector de la derecha</div> -->
+      <img src="../assets/PersonajesCamara/FondoCamara.png" class="imagen-fondo" />
 			<div id="pagination">
-				<!-- <button class="active" data-slide="0"></button> -->
         <div class="horizontal" @click="seleccionarChuck()"><div :class="chuckTexto">Chuck</div> <button :class="chuckClass" data-slide="0"></button></div>
 				<div class="horizontal" @click="seleccionarIndia()"><div :class="indiaTexto">India</div> <button :class="indiaClass" data-slide="1"></button></div>
+        <div class="button-container">
+          <div class='button' @click="mostrarPolaroidPensamiento()">PENSAMIENTOS</div>
+          <div class='button' @click="mostrarPolaroidDeseo()">DESEOS</div>
+          <div class='button'>PESADILLAS</div>
+        </div>
 			</div>
-
+      
+      <div v-if="mostrarPolaroid">
+        <div id="page-mask"></div>
+        <img class="icono-cerrar" title="Cerrar la polaroid" @click="cerrarPolaroid()" src="@/assets/icons/Close.svg" />  
+        <img class="polaroid" :src="polaroid" />
+      </div> 
 		</div>
 </template>
 
 <style scoped>
+#page-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 6;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin: 60px auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  margin-top: 300px;
+  margin-left: 100px;
+  width: 100%;
+}
+
+.button {
+  width: fit-content;
+  display: flex;
+  overflow: hidden;
+  margin: 10px;
+  padding: 12px 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 0px black;
+  color: #fff;
+  border: 0 none;
+  border-radius: 36px;
+  font-size: 30px;
+  font-family: "CCMonsterMashMedium";
+  font-weight: 500;
+  line-height: 1.3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 250px;
+  color:#4483BA;
+  background:#FDE147;
+  margin-left: 50px;
+  border: 3px solid #F9AC5F;
+  box-shadow: 2px 5px 0px black;
+}
+.button:hover {
+  transition: all 150ms linear;
+  opacity: 0.55;
+}
+.button:active {
+  transition: all 150ms linear;
+  opacity: 0.75;
+}
+.button:focus {
+  outline: 1px dotted #959595;
+  outline-offset: -4px;
+}
+.camera-canvas {
+  width: 100%;
+  text-align: start;
+}
+.imagen-fondo {
+  position:absolute;
+  width: 100%;
+  z-index: -1;
+  max-width: 1366px;
+}
+
 .horizontal {
   display: flex;
   flex-direction: row;
@@ -95,20 +214,23 @@ export default defineComponent({
 }
 .vineta-estandar {
   max-width: 1366px;
-  widows: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
 }
 .texto-seleccionado {
   margin-right: 30px;
-  color: blue;
+  color: white;
   font-size: 20px;
 }
 
 .texto-explicativo {
   font-size: 20px;
+  
 }
 .texto-sin-seleccionar {
   margin-right: 30px;
-  color: blue;
+  color: white;
   opacity: 0.4;
 }
 .vineta-estandar {
@@ -125,7 +247,6 @@ export default defineComponent({
 #slider canvas {
   width: 150%;
   height: 150%;
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -157,7 +278,7 @@ export default defineComponent({
   font-weight: 400;
   font-size: 30px;
   letter-spacing: -1px;
-  color: blue;
+  color: white;
   line-height: 30px;
   margin: 20px 0 60px;
 }
@@ -175,7 +296,7 @@ export default defineComponent({
   font-family: "Arial", sans-serif;
   font-size: 11px;
   letter-spacing: 5px;
-  color: blue;
+  color: white;
   text-transform: uppercase;
   position: relative;
 }
@@ -199,7 +320,7 @@ export default defineComponent({
   font-family: "acta-display", serif;
   font-weight: 400;
   font-size: 18px;
-  color: blue;
+  color: white;
 }
 @media screen and (min-width: 800px) {
   #slider-content #slide-status {
@@ -209,9 +330,8 @@ export default defineComponent({
 
 #pagination {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 30px;
+  transform: translateY(250%);
+  right: 80px;
   z-index: 6;
   width: 100%
 
@@ -224,7 +344,7 @@ export default defineComponent({
   border: 0;
   width: 16px;
   height: 16px;
-  background-color: blue;
+  background-color: white;
   border-radius: 100%;
   padding: 0;
   margin: 30px 0;
@@ -255,9 +375,30 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  border: 1px solid blue;
+  border: 1px solid white;
   opacity: 0;
   transition: opacity 0.4s ease-in-out, width 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+
+.polaroid {
+  width: 50%;
+  max-width: 30%;
+  position: absolute;
+  z-index: 7;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+}
+
+.icono-cerrar {
+  position: absolute;
+  z-index: 8;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(300%, 200%);
+  cursor: pointer;
 }
 
 
