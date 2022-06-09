@@ -1,11 +1,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Camera from "@/components/Camera.vue";
+import Polaroids from "@/components/Polaroids.vue";
 
 export default defineComponent({
   name: "Comic",
   components: {
     Camera,
+    Polaroids,
   },
   data() {
     return {
@@ -166,11 +168,15 @@ export default defineComponent({
       />
     </div>
     </div>
-    <Camera></Camera>
+    <div><Camera></Camera></div>
+    <div><Polaroids class="polaroids"></Polaroids></div>
   </div>
 </template>
 
 <style scoped>
+.polaroids {
+  margin-top: 10px;
+}
 .vertical {
   display: flex;
   flex-direction: column;

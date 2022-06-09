@@ -208,7 +208,7 @@ export default defineComponent({
   position:absolute;
   width: 100%;
   z-index: -1;
-  max-width: 1366px;
+  max-width: 1194px;
 }
 
 .horizontal {
@@ -416,6 +416,7 @@ export default defineComponent({
 
 .button-text {
   margin-top: 700px;
+  margin-bottom: 20px;
 }
 
 .selector-texto {
