@@ -200,6 +200,12 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/21_Vineta21.gif"
     />
+    <img
+      loading="lazy"
+      alt="22"
+      class="vineta-estandar"
+      src="../assets/Vinetas/22_Vineta22.gif"
+    />
   </div>
 </template>
 
