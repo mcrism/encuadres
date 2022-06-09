@@ -108,16 +108,17 @@ export default defineComponent({
 			<img class="vineta-estandar" :src="personajeSeleccionado" />
       <!-- <div class="texto-explicativo"> Cada botón es un filtro de Click. ¿Qué pasará si los pulsas? También puedes cambiar de personaje en el selector de la derecha</div> -->
       <img src="../assets/PersonajesCamara/FondoCamara.png" class="imagen-fondo" />
+      <div class="selector-texto">SELECCIONA UN PERSONAJE</div>
 			<div id="pagination">
         <div class="horizontal" @click="seleccionarChuck()"><div :class="chuckTexto">Chuck</div> <button :class="chuckClass" data-slide="0"></button></div>
-				<div class="horizontal" @click="seleccionarIndia()"><div :class="indiaTexto">India</div> <button :class="indiaClass" data-slide="1"></button></div>
+				<div class="horizontal" @click="seleccionarIndia()"><div :class="indiaTexto">India</div> <button :class="indiaClass" data-slide="1"></button></div> 
+			</div>
+      <div class="button-text"><div class="texto-explicativo">Pulsa un filtro para sacar una foto</div>
         <div class="button-container">
           <div class='button' @click="mostrarPolaroidPensamiento()">PENSAMIENTOS</div>
           <div class='button' @click="mostrarPolaroidDeseo()">DESEOS</div>
           <div class='button'>PESADILLAS</div>
-        </div>
-			</div>
-      
+        </div></div>
       <div v-if="mostrarPolaroid">
         <div id="page-mask"></div>
         <img class="icono-cerrar" title="Cerrar la polaroid" @click="cerrarPolaroid()" src="@/assets/icons/Close.svg" />  
@@ -144,8 +145,7 @@ export default defineComponent({
   justify-content: center;
   position: absolute;
   z-index: 2;
-  margin-top: 300px;
-  margin-left: 100px;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -201,6 +201,8 @@ export default defineComponent({
 .camera-canvas {
   width: 100%;
   text-align: start;
+  background:#5C82B7;
+  z-index: 0;
 }
 .imagen-fondo {
   position:absolute;
@@ -230,8 +232,13 @@ export default defineComponent({
 }
 
 .texto-explicativo {
-  font-size: 20px;
-  
+  font-size: 30px;
+  font-family: "ComicBook";
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  max-width: 1194px;
 }
 .texto-sin-seleccionar {
   margin-right: 30px;
@@ -337,7 +344,7 @@ export default defineComponent({
 #pagination {
   position: absolute;
   transform: translateY(250%);
-  right: 80px;
+  right: 50px;
   z-index: 6;
   width: 100%
 
@@ -407,5 +414,16 @@ export default defineComponent({
   cursor: pointer;
 }
 
+.button-text {
+  margin-top: 700px;
+}
 
+.selector-texto {
+  font-family: "ComicBook";
+  color: white;
+  text-align: right;
+  font-size: 15px;
+  right: 25px;
+  top: 300px;
+}
 </style>

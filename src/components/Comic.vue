@@ -184,7 +184,7 @@ export default defineComponent({
 }
 
 .vineta-estandar {
-  max-width: 1366px;
+  max-width: 1194px;
   width: 100%;
 }
 
