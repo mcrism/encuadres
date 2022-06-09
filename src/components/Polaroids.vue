@@ -111,7 +111,6 @@ export default defineComponent({
   width: 100%;
   text-align: start;
   background: #5c82b7;
-  z-index: 0;
 }
 .mycard {
   height: 100%;

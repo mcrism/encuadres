@@ -175,7 +175,7 @@ export default defineComponent({
 
 <style scoped>
 .polaroids {
-  margin-top: 10px;
+  position: absolute;
 }
 .vertical {
   display: flex;
