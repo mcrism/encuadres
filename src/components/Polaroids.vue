@@ -92,11 +92,22 @@ export default defineComponent({
         </label>
       </div>
     </div>
+    <div class="texto">14 fotos después, India se da cuenta de una cosa...</div>
   </div>
 </template>
 
 
 <style scoped>
+.texto {
+  font-family: "ComicBook";
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 750px;
+  text-align: center;
+  width: 100%;
+  text-shadow: 3px 3px 1px black;
+}
 .polaroids {
   text-align: center;
 }
@@ -111,7 +122,9 @@ export default defineComponent({
   width: 100%;
   text-align: start;
   background: #5c82b7;
+  position:fixed;
 }
+
 .mycard {
   height: 100%;
   width: 100%;

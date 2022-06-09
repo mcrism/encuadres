@@ -170,12 +170,45 @@ export default defineComponent({
     </div>
     <div><Camera></Camera></div>
     <div><Polaroids class="polaroids"></Polaroids></div>
+    <img
+      loading="lazy"
+      alt="17"
+      class="vineta-prueba"
+      src="../assets/Vinetas/17_Vineta17.png"
+    />
+    <img
+      loading="lazy"
+      alt="18"
+      class="vineta-solape-superior"
+      src="../assets/Vinetas/18_Vineta18.png"
+    />
+    <img
+      loading="lazy"
+      alt="19"
+      class="vineta-estandar"
+      src="../assets/Vinetas/19_Vineta19.png"
+    />
+    <img
+      loading="lazy"
+      alt="20"
+      class="vineta-estandar"
+      src="../assets/Vinetas/20_Vineta20.png"
+    />
+     <img
+      loading="lazy"
+      alt="21"
+      class="vineta-estandar"
+      src="../assets/Vinetas/21_Vineta21.gif"
+    />
   </div>
 </template>
 
 <style scoped>
 .polaroids {
   position: absolute;
+}
+.polaroids:after {
+  top: 1024px;
 }
 .vertical {
   display: flex;
@@ -187,12 +220,18 @@ export default defineComponent({
   background-position: 0 0, 10px 10px;
   background-color: white;
   background-image: none;
+  z-index: -1;
 }
 
+.vineta-prueba {
+  width: 100%;
+  margin-top: 834px;
+}
 .vineta-estandar {
   max-width: 1194px;
   width: 100%;
 }
+
 
 .vineta-solape-superior {
   width: 100%;
