@@ -84,7 +84,7 @@ export default defineComponent({
 
 <template>
   <div class="canvas">
-    <img src="../assets/Polaroids/Fondo.png" class="coleccion-polaroids" />
+    <img src="../assets/Polaroids/fondo.png" class="coleccion-polaroids" />
     <div class="slider">
       <div class="testimonials mb-8">
         <label v-for="polaroid in polaroids" :key="polaroid.index" class="item" :id="polaroid.index">
