@@ -122,7 +122,13 @@ export default defineComponent({
   width: 100%;
   text-align: start;
   background: #5c82b7;
-  position:fixed;
+  position:absolute;
+  
+}
+
+.canvas::after {
+  position: absolute;
+  content: "";
 }
 
 .mycard {

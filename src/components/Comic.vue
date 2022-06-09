@@ -169,8 +169,8 @@ export default defineComponent({
     </div>
     </div>
     <div><Camera></Camera></div>
-    <div><Polaroids class="polaroids"></Polaroids></div>
-    <img
+    <div ><Polaroids class="polaroids"></Polaroids></div>
+   <img
       loading="lazy"
       alt="17"
       class="vineta-prueba"
@@ -206,12 +206,49 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/22_Vineta22.gif"
     />
+    <img
+      loading="lazy"
+      alt="23"
+      class="vineta-estandar"
+      src="../assets/Vinetas/23_Vineta23.png"
+    />
+     <img
+      loading="lazy"
+      alt="24"
+      class="vineta-estandar"
+      src="../assets/Vinetas/24_Vineta24.png"
+    />
+    <img
+      loading="lazy"
+      alt="25"
+      class="vineta-estandar"
+      src="../assets/Vinetas/25_Vineta25.png"
+    />
+    <img
+      loading="lazy"
+      alt="26"
+      class="vineta-estandar"
+      src="../assets/Vinetas/26_Vineta26.png"
+    />
+    <img
+      loading="lazy"
+      alt="27"
+      class="vineta-estandar"
+      src="../assets/Vinetas/27_Vineta27.png"
+    />
+     <img
+      loading="lazy"
+      alt="28"
+      class="vineta-estandar"
+      src="../assets/Vinetas/28_Vineta28.png"
+    />
   </div>
 </template>
 
 <style scoped>
 .polaroids {
   position: absolute;
+  z-index: 2;
 }
 .polaroids:after {
   top: 1024px;
@@ -226,7 +263,6 @@ export default defineComponent({
   background-position: 0 0, 10px 10px;
   background-color: white;
   background-image: none;
-  z-index: -1;
 }
 
 .vineta-prueba {
