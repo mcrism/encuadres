@@ -6,7 +6,8 @@ import chuckURL from "@/assets/PersonajesCamara/ChuckPosicionado.png";
 import chuckPensamientoURL from "@/assets/PersonajesCamara/ChuckPensamiento.gif";
 import chuckDeseoURL from "@/assets/PersonajesCamara/ChuckDeseo.gif";
 import indiaPensamientoURL from "@/assets/PersonajesCamara/IndiaPensamiento.gif";
-
+import indiaDeseoURL from "@/assets/PersonajesCamara/IndiaDeseo.gif";
+import indiaPesadillaURL from "@/assets/PersonajesCamara/IndiaPesadilla.gif";
 
 export default defineComponent({
   name: "Camera",
@@ -43,6 +44,16 @@ export default defineComponent({
       this.mostrarPolaroid = true;
       if (this.chuckSelected) {
         this.polaroid = chuckDeseoURL;
+      } else {
+        this.polaroid = indiaDeseoURL;
+      }
+    },
+    mostrarPolaroidPesadilla(): void {
+      this.mostrarPolaroid = true;
+      if (this.chuckSelected) {
+        this.polaroid = chuckDeseoURL;
+      } else {
+        this.polaroid = indiaPesadillaURL;
       }
     },
     cerrarPolaroid(): void {
@@ -117,7 +128,7 @@ export default defineComponent({
         <div class="button-container">
           <div class='button' @click="mostrarPolaroidPensamiento()">PENSAMIENTOS</div>
           <div class='button' @click="mostrarPolaroidDeseo()">DESEOS</div>
-          <div class='button'>PESADILLAS</div>
+          <div class='button' @click="mostrarPolaroidPesadilla()">PESADILLAS</div>
         </div></div>
       <div v-if="mostrarPolaroid">
         <div id="page-mask"></div>
