@@ -242,6 +242,12 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/28_Vineta28.png"
     />
+    <img
+      loading="lazy"
+      alt="29"
+      class="vineta-estandar"
+      src="../assets/Vinetas/29_Vineta29.png"
+    />
   </div>
 </template>
 
