@@ -249,9 +249,10 @@ export default defineComponent({
 .polaroids {
   position: absolute;
   z-index: 2;
+  margin-top: 100px;
 }
 .polaroids:after {
-  top: 1024px;
+  top: 1094px;
 }
 .vertical {
   display: flex;

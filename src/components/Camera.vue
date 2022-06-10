@@ -121,13 +121,18 @@ export default defineComponent({
         </div></div>
       <div v-if="mostrarPolaroid">
         <div id="page-mask"></div>
-        <img class="icono-cerrar" title="Cerrar la polaroid" @click="cerrarPolaroid()" src="@/assets/icons/Close.svg" />  
-        <img class="polaroid" :src="polaroid" />
+        <div class="polaroid-completa"><img class="icono-cerrar" title="Cerrar la polaroid" @click="cerrarPolaroid()" src="@/assets/icons/Close.svg" />  
+        <img class="polaroid" :src="polaroid" /></div>
+        
       </div> 
 		</div>
 </template>
 
 <style scoped>
+.polaroid-completa {
+  display: flex;
+  flex-direction: column;
+}
 #page-mask {
   position: fixed;
   left: 0;
@@ -398,9 +403,8 @@ export default defineComponent({
   max-width: 30%;
   position: absolute;
   z-index: 7;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 20%);
+  left: 35%;
+  bottom: 60%;
 }
 
 .icono-cerrar {
@@ -408,9 +412,7 @@ export default defineComponent({
   z-index: 8;
   height: 50px;
   width: 50px;
-  top: 50%;
-  left: 50%;
-  transform: translate(300%, 200%);
+  transform: translate(750px, -560px);
   cursor: pointer;
 }
 
