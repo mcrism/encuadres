@@ -8,6 +8,7 @@ import chuckDeseoURL from "@/assets/PersonajesCamara/ChuckDeseo.gif";
 import indiaPensamientoURL from "@/assets/PersonajesCamara/IndiaPensamiento.gif";
 import indiaDeseoURL from "@/assets/PersonajesCamara/IndiaDeseo.gif";
 import indiaPesadillaURL from "@/assets/PersonajesCamara/IndiaPesadilla.gif";
+import chuckPesadillaURL from "@/assets/PersonajesCamara/ChuckPesadilla.gif";
 
 export default defineComponent({
   name: "Camera",
@@ -51,7 +52,7 @@ export default defineComponent({
     mostrarPolaroidPesadilla(): void {
       this.mostrarPolaroid = true;
       if (this.chuckSelected) {
-        this.polaroid = chuckDeseoURL;
+        this.polaroid = chuckPesadillaURL;
       } else {
         this.polaroid = indiaPesadillaURL;
       }
