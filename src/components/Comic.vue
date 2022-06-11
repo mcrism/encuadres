@@ -27,7 +27,7 @@ export default defineComponent({
 
     mostrarVineta5(): void {
       this.control_vineta5 = !this.control_vineta5;
-      this.restartGIF("vineta_5_2", this.vineta5GIFurl);
+      this.restartGIF("vineta_5_2", vineta5GIF);
     },
   },
   computed: {
