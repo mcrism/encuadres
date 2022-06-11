@@ -58,20 +58,20 @@ export default defineComponent({
     polaroids(): Array<Record<string, any>> {
       return [ 
         {url: polaroid0, index:"carrusel-1", id: 1}, 
-        {url: polaroid1, index:"carrusel-2", id: 2},
-        {url: polaroid2, index:"carrusel-3", id: 3},
-        {url: polaroid3, index:"carrusel-4", id: 4},
-        {url: polaroid4, index:"carrusel-5", id: 5},
-        {url: polaroid5, index:"carrusel-6", id: 6},
-        {url: polaroid6, index:"carrusel-7", id: 7},
-        {url: polaroid7, index:"carrusel-8", id: 8},
-        {url: polaroid8, index:"carrusel-9", id: 9},
+        {url: polaroid6, index:"carrusel-2", id: 2},
+        {url: polaroid12, index:"carrusel-3", id: 3},
+        {url: polaroid1, index:"carrusel-4", id: 4},
+        {url: polaroid7, index:"carrusel-5", id: 5},
+        {url: polaroid2, index:"carrusel-6", id: 6},
+        {url: polaroid13, index:"carrusel-7", id: 7},
+        {url: polaroid10, index:"carrusel-8", id: 8},
+        {url: polaroid3, index:"carrusel-9", id: 9},
         {url: polaroid9, index:"carrusel-10", id: 10},
-        {url: polaroid10, index:"carrusel-11", id: 11},
-        {url: polaroid11, index:"carrusel-12", id: 12},
-        {url: polaroid12, index:"carrusel-13", id: 13},
-        {url: polaroid13, index:"carrusel-14", id: 14},    
-        {url: polaroid14, index:"carrusel-15", id: 15},   
+        {url: polaroid14, index:"carrusel-11", id: 11},
+        {url: polaroid4, index:"carrusel-12", id: 12},
+        {url: polaroid8, index:"carrusel-13", id: 13},
+        {url: polaroid5, index:"carrusel-14", id: 14},    
+        {url: polaroid11, index:"carrusel-15", id: 15},   
       ];
     }
   },
@@ -84,7 +84,9 @@ export default defineComponent({
 
 <template>
   <div class="canvas">
+   
     <img src="../assets/Polaroids/fondo.png" class="coleccion-polaroids" />
+    <div class="texto-superior">Pulsa las fotos para moverte hacia los lados. <BR/>¡Podrás ver todas las polaroids!</div>
     <div class="slider">
       <div class="testimonials mb-8">
         <label v-for="polaroid in polaroids" :key="polaroid.index" class="item" :id="polaroid.index">
@@ -98,6 +100,15 @@ export default defineComponent({
 
 
 <style scoped>
+.texto-superior {
+  color: white;
+  font-family: "ComicBook";
+  font-size: 30px;
+  text-shadow: 3px 3px 1px black;
+  text-align: center;
+  width: 100%;
+  top: 50px;
+}
 .texto {
   font-family: "ComicBook";
   color: white;
@@ -167,7 +178,7 @@ body {
 .slider {
   width: 100%;
   height: 1024px;
-  margin-top: 100px;
+  margin-top: 50px;
   z-index: 1;
   position: absolute;
 }

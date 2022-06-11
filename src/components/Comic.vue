@@ -3,6 +3,8 @@ import { defineComponent } from "vue";
 import Camera from "@/components/Camera.vue";
 import Polaroids from "@/components/Polaroids.vue";
 
+import vineta5GIF from "@/assets/Vinetas/5_2.gif";
+
 export default defineComponent({
   name: "Comic",
   components: {
@@ -12,7 +14,6 @@ export default defineComponent({
   data() {
     return {
       control_vineta5: true,
-      control_vineta15: true,
     };
   },
   methods: {
@@ -26,15 +27,13 @@ export default defineComponent({
 
     mostrarVineta5(): void {
       this.control_vineta5 = !this.control_vineta5;
-      this.restartGIF("vineta_5_2", "../assets/Vinetas/5_2.gif");
-    },
-     mostrarVineta15(): void {
-      this.control_vineta15 = !this.control_vineta15;
-      this.restartGIF("vineta_15_3", "../assets/Vinetas/15_3.gif");
+      this.restartGIF("vineta_5_2", this.vineta5GIFurl);
     },
   },
   computed: {
-
+    vineta5GIFurl(): string {
+      return vineta5GIF;
+    }
   },
 });
 </script>
@@ -75,7 +74,7 @@ export default defineComponent({
       <img
         loading="lazy"
         alt="5_1"
-        class="vineta-estandar"
+        class="vineta-estandar-interactiva"
         src="../assets/Vinetas/5_1.gif"
       />
     </div>
@@ -84,8 +83,8 @@ export default defineComponent({
         loading="lazy"
         id="vineta_5_2"
         alt="5_2"
-        class="vineta-estandar"
-        src="../assets/Vinetas/5_2.gif"
+        class="vineta-estandar-interactiva"
+        :src="vineta5GIFurl"
       />
     </div>
     <img
@@ -142,32 +141,12 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/14_Vineta14.gif"
     />
-    <div class="horizontales">
-      <img
-      loading="lazy"
-      alt="15_1"
-      class="vineta-mitad-horizontal"
-      src="../assets/Vinetas/15_Vineta15_1.png"
-    />
-    <div v-if="control_vineta15"
-      @click="control_vineta15 = !control_vineta15">
     <img
-        loading="lazy"
-        alt="15_2"
-        class="vineta-mitad-horizontal-interactiva"
-        src="../assets/Vinetas/15_Vineta15_2.png"
-      />
-      </div>
-      <div v-else  @click="mostrarVineta15()">
-      <img
-        loading="lazy"
-        alt="15_3"
-        id="vineta_15_3"
-        class="vineta-mitad-horizontal-interactiva"
-        src="../assets/Vinetas/15_Vineta15_3.gif"
-      />
-    </div>
-    </div>
+      loading="lazy"
+      alt="15"
+      class="vineta-estandar"
+      src="../assets/Vinetas/15_Vineta15.png"
+    />
     <div><Camera></Camera></div>
     <div ><Polaroids class="polaroids"></Polaroids></div>
    <img
@@ -287,7 +266,11 @@ export default defineComponent({
   max-width: 1194px;
   width: 100%;
 }
-
+.vineta-estandar-interactiva {
+  max-width: 1194px;
+  width: 100%;
+  cursor: pointer;
+}
 
 .vineta-solape-superior {
   width: 100%;
@@ -295,8 +278,8 @@ export default defineComponent({
 }
 
 .vineta-vacia {
-  height: 1024px;
-  min-height: 1024px;
+  height: 834px;
+  min-height: 834px;
   width: 100%;
 }
 

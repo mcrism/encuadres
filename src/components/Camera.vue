@@ -10,9 +10,10 @@ import indiaDeseoURL from "@/assets/PersonajesCamara/IndiaDeseo.gif";
 import indiaPesadillaURL from "@/assets/PersonajesCamara/IndiaPesadilla.gif";
 import chuckPesadillaURL from "@/assets/PersonajesCamara/ChuckPesadilla.gif";
 
+import Cargador from "@/components/Cargador.vue";
+
 export default defineComponent({
   name: "Camera",
-  components: {},
   data() {
     return {
       chuckSelected: true,
@@ -22,7 +23,11 @@ export default defineComponent({
       modoDeseos: false,
       modoPesadillas: false,
       polaroid: "",
+      mostrarCargador: false,
     };
+  },
+  components: {
+    Cargador,
   },
   methods: {
     seleccionarChuck(): void {
@@ -34,28 +39,35 @@ export default defineComponent({
       this.indiaSelected = true;
     },
     mostrarPolaroidPensamiento(): void {
-      this.mostrarPolaroid = true;
+      this.mostrarCargador = true;
       if (this.chuckSelected) {
         this.polaroid = chuckPensamientoURL;
       } else {
         this.polaroid = indiaPensamientoURL;
       }
-    },
-    mostrarPolaroidDeseo(): void {
+      this.mostrarCargador = false;
       this.mostrarPolaroid = true;
+    },
+    mostrarPolaroidDeseo(): void { 
+      this.mostrarCargador = true;
       if (this.chuckSelected) {
         this.polaroid = chuckDeseoURL;
       } else {
         this.polaroid = indiaDeseoURL;
       }
+      this.mostrarCargador = false;
+      this.mostrarPolaroid = true;
+      
     },
     mostrarPolaroidPesadilla(): void {
-      this.mostrarPolaroid = true;
+      this.mostrarCargador = true;
       if (this.chuckSelected) {
         this.polaroid = chuckPesadillaURL;
       } else {
         this.polaroid = indiaPesadillaURL;
       }
+        this.mostrarCargador = false;
+       this.mostrarPolaroid = true;
     },
     cerrarPolaroid(): void {
       this.mostrarPolaroid = false;
@@ -125,17 +137,23 @@ export default defineComponent({
         <div class="horizontal" @click="seleccionarChuck()"><div :class="chuckTexto">Chuck</div> <button :class="chuckClass" data-slide="0"></button></div>
 				<div class="horizontal" @click="seleccionarIndia()"><div :class="indiaTexto">India</div> <button :class="indiaClass" data-slide="1"></button></div> 
 			</div>
-      <div class="button-text"><div class="texto-explicativo">Pulsa un filtro para sacar una foto</div>
+      <div class="button-text">
+        <div class="texto-explicativo">Pulsa un filtro para sacar una foto</div>
         <div class="button-container">
           <div class='button' @click="mostrarPolaroidPensamiento()">PENSAMIENTOS</div>
           <div class='button' @click="mostrarPolaroidDeseo()">DESEOS</div>
           <div class='button' @click="mostrarPolaroidPesadilla()">PESADILLAS</div>
-        </div></div>
+        </div>
+      </div>
+      <div v-if="mostrarCargador">
+        <Cargador class="cargador"/>
+      </div>
       <div v-if="mostrarPolaroid">
-        <div id="page-mask"></div>
-        <div class="polaroid-completa"><img class="icono-cerrar" title="Cerrar la polaroid" @click="cerrarPolaroid()" src="@/assets/icons/Close.svg" />  
-        <img class="polaroid" :src="polaroid" /></div>
-        
+        <!-- <div id="page-mask"></div> -->
+        <div  class="polaroid-completa">
+          <img class="icono-cerrar" title="Cerrar la polaroid" @click="cerrarPolaroid()" src="@/assets/icons/Close.svg" />  
+          <img class="polaroid" :src="polaroid" />
+        </div>
       </div> 
 		</div>
 </template>
@@ -144,6 +162,8 @@ export default defineComponent({
 .polaroid-completa {
   display: flex;
   flex-direction: column;
+  transform: translateY(-100px);
+  z-index: 8;
 }
 #page-mask {
   position: fixed;
@@ -218,7 +238,7 @@ export default defineComponent({
 .camera-canvas {
   width: 100%;
   text-align: start;
-  background:#5C82B7;
+  background-color:#5C82B7;
   z-index: 0;
 }
 .imagen-fondo {
@@ -414,14 +434,25 @@ export default defineComponent({
   width: 50%;
   max-width: 30%;
   position: absolute;
-  z-index: 7;
+  z-index: 8;
   left: 35%;
   bottom: 60%;
+  box-shadow: 5px 5px 5px black;
 }
+
+.cargador {
+  width: 100%;
+  height: 100%;
+  max-width: 30%;
+  position: absolute;
+  z-index: 7;
+  left: 35%;
+  transform: translateY(-350px);
+  }
 
 .icono-cerrar {
   position: absolute;
-  z-index: 8;
+  z-index: 9;
   height: 50px;
   width: 50px;
   transform: translate(750px, -560px);
