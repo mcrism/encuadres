@@ -54,6 +54,7 @@ import Comic from '@/components/Comic.vue'
 #app {
   width: 100%;
   max-width: 1194px;
+  min-width: 1194px;
   margin: 0px;
   padding: 0rem;
   font-weight: normal;

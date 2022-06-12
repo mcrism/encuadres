@@ -33,10 +33,12 @@ export default defineComponent({
     seleccionarChuck(): void {
       this.chuckSelected = true;
       this.indiaSelected = false;
+      this.mostrarPolaroid = false;
     },
     seleccionarIndia(): void {
       this.chuckSelected = false;
       this.indiaSelected = true;
+      this.mostrarPolaroid = false;
     },
     mostrarPolaroidPensamiento(): void {
       this.mostrarCargador = true;
@@ -381,7 +383,7 @@ export default defineComponent({
 #pagination {
   position: absolute;
   transform: translateY(250%);
-  right: 50px;
+  right: 5%;
   z-index: 6;
   width: 100%
 
