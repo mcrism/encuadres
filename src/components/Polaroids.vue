@@ -103,7 +103,7 @@ export default defineComponent({
 .texto-superior {
   color: white;
   font-family: "ComicBook";
-  font-size: 30px;
+  font-size: 25px;
   text-shadow: 3px 3px 1px black;
   text-align: center;
   width: 100%;
@@ -114,7 +114,7 @@ export default defineComponent({
   color: white;
   font-size: 30px;
   position: absolute;
-  top: 750px;
+  top: 670px;
   text-align: center;
   width: 100%;
   text-shadow: 3px 3px 1px black;
@@ -178,7 +178,7 @@ body {
 .slider {
   width: 100%;
   height: 1024px;
-  margin-top: 50px;
+  margin-top: 10px;
   z-index: 1;
   position: absolute;
 }

@@ -67,19 +67,6 @@ export default defineComponent({
     }
   },
   computed: {
-    // polaroid(): string {
-    //   if (this.modoPensamientos) {
-    //     if (this.chuckSelected) {
-    //       return chuckPensamientoURL;
-    //     } else {
-    //       return chuckPensamientoURL;
-    //     }
-    //   }
-    //   else {
-    //     return chuckPensamientoURL;
-    //   }
-      
-    // },
     chuckClass(): string {
       if (this.chuckSelected) {
         return "active";
@@ -370,7 +357,7 @@ export default defineComponent({
 
 #pagination {
   position: absolute;
-  transform: translateY(210%);
+  transform: translateY(180%);
   right: 50px;
   z-index: 6;
   width: 100%
@@ -460,6 +447,6 @@ export default defineComponent({
   text-align: right;
   font-size: 13px;
   right: 25px;
-  top: 300px;
+  top: 250px;
 }
 </style>
