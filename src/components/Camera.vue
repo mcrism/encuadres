@@ -172,7 +172,7 @@ export default defineComponent({
   justify-content: center;
   position: absolute;
   z-index: 2;
-  margin-top: 10px;
+  margin-top: 3px;
   width: 100%;
 }
 
@@ -181,7 +181,7 @@ export default defineComponent({
   display: flex;
   overflow: hidden;
   margin: 10px;
-  padding: 12px 12px;
+  padding: 9px 12px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -197,7 +197,7 @@ export default defineComponent({
   color: #fff;
   border: 0 none;
   border-radius: 36px;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "CCMonsterMashMedium";
   font-weight: 500;
   line-height: 1.3;
@@ -259,12 +259,12 @@ export default defineComponent({
 }
 
 .texto-explicativo {
-  font-size: 30px;
+  font-size: 25px;
   font-family: "ComicBook";
   color: white;
   width: 100%;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   max-width: 1024px;
 }
 .texto-sin-seleccionar {
@@ -370,8 +370,8 @@ export default defineComponent({
 
 #pagination {
   position: absolute;
-  transform: translateY(250%);
-  right: 5%;
+  transform: translateY(210%);
+  right: 50px;
   z-index: 6;
   width: 100%
 
@@ -450,15 +450,15 @@ export default defineComponent({
 }
 
 .button-text {
-  margin-top: 700px;
-  margin-bottom: 20px;
+  margin-top: 600px;
+  margin-bottom: 5px;
 }
 
 .selector-texto {
   font-family: "ComicBook";
   color: white;
   text-align: right;
-  font-size: 15px;
+  font-size: 13px;
   right: 25px;
   top: 300px;
 }
