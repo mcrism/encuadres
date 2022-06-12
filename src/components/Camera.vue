@@ -10,7 +10,6 @@ import indiaDeseoURL from "@/assets/PersonajesCamara/IndiaDeseo.gif";
 import indiaPesadillaURL from "@/assets/PersonajesCamara/IndiaPesadilla.gif";
 import chuckPesadillaURL from "@/assets/PersonajesCamara/ChuckPesadilla.gif";
 
-import Cargador from "@/components/Cargador.vue";
 
 export default defineComponent({
   name: "Camera",
@@ -23,11 +22,9 @@ export default defineComponent({
       modoDeseos: false,
       modoPesadillas: false,
       polaroid: "",
-      mostrarCargador: false,
     };
   },
   components: {
-    Cargador,
   },
   methods: {
     seleccionarChuck(): void {
@@ -41,34 +38,28 @@ export default defineComponent({
       this.mostrarPolaroid = false;
     },
     mostrarPolaroidPensamiento(): void {
-      this.mostrarCargador = true;
       if (this.chuckSelected) {
         this.polaroid = chuckPensamientoURL;
       } else {
         this.polaroid = indiaPensamientoURL;
       }
-      this.mostrarCargador = false;
       this.mostrarPolaroid = true;
     },
     mostrarPolaroidDeseo(): void { 
-      this.mostrarCargador = true;
       if (this.chuckSelected) {
         this.polaroid = chuckDeseoURL;
       } else {
         this.polaroid = indiaDeseoURL;
       }
-      this.mostrarCargador = false;
       this.mostrarPolaroid = true;
       
     },
     mostrarPolaroidPesadilla(): void {
-      this.mostrarCargador = true;
       if (this.chuckSelected) {
         this.polaroid = chuckPesadillaURL;
       } else {
         this.polaroid = indiaPesadillaURL;
       }
-        this.mostrarCargador = false;
        this.mostrarPolaroid = true;
     },
     cerrarPolaroid(): void {
@@ -146,9 +137,6 @@ export default defineComponent({
           <div class='button' @click="mostrarPolaroidDeseo()">DESEOS</div>
           <div class='button' @click="mostrarPolaroidPesadilla()">PESADILLAS</div>
         </div>
-      </div>
-      <div v-if="mostrarCargador">
-        <Cargador class="cargador"/>
       </div>
       <div v-if="mostrarPolaroid">
         <!-- <div id="page-mask"></div> -->
