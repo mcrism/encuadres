@@ -261,31 +261,43 @@ export default defineComponent({
 .vineta-prueba {
   width: 100%;
   margin-top: 834px;
+
 }
 .vineta-estandar {
   max-width: 1024px;
   width: 100%;
+  border-style: solid;
+  border-color: white;
+  border-width: 10px;
 }
+
 .vineta-estandar-interactiva {
   max-width: 1024px;
   width: 100%;
   cursor: pointer;
+  border-style: solid;
+  border-color: white;
+  border-width: 10px;
 }
 
 .vineta-solape-superior {
   width: 100%;
   margin-top: -50px;
+  
 }
 
 .vineta-vacia {
-  height: 834px;
-  min-height: 834px;
+  height: 768;
+  min-height: 768;
   width: 100%;
 }
 
 .vineta-media {
   height: 50%;
   width: 100%;
+    border-style: solid;
+  border-color: white;
+  border-width: 10px;
 }
 
 .horizontales {
