@@ -432,7 +432,7 @@ export default defineComponent({
   z-index: 9;
   height: 50px;
   width: 50px;
-  transform: translate(750px, -560px);
+  transform: translate(640px, -485px);
   cursor: pointer;
 }
 
