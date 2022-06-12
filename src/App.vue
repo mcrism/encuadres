@@ -53,8 +53,8 @@ import Comic from '@/components/Comic.vue'
 
 #app {
   width: 100%;
-  max-width: 1194px;
-  min-width: 1194px;
+  max-width: 1024px;
+  min-width: 1024px;
   margin: 0px;
   padding: 0rem;
   font-weight: normal;
@@ -73,7 +73,7 @@ body {
 
 .portada {
     width: 100%;
-    max-width: 1194px;
+    max-width: 1024px;
   }
 
 .columnas {

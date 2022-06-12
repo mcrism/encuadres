@@ -235,7 +235,7 @@ export default defineComponent({
   position:absolute;
   width: 100%;
   z-index: -1;
-  max-width: 1194px;
+  max-width: 1024px;
 }
 
 .horizontal {
@@ -265,7 +265,7 @@ export default defineComponent({
   width: 100%;
   text-align: center;
   margin-top: 20px;
-  max-width: 1194px;
+  max-width: 1024px;
 }
 .texto-sin-seleccionar {
   margin-right: 30px;

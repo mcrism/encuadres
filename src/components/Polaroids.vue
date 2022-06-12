@@ -124,7 +124,7 @@ export default defineComponent({
 }
 .coleccion-polaroids {
   width: 100%;
-  max-width: 1194px;
+  max-width: 1024px;
   position: absolute;
   z-index: -1;
 }

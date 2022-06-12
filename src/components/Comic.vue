@@ -233,7 +233,7 @@ export default defineComponent({
       class="portada"
       src="../assets/Formulario.png"
     />
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekWuCOnl1l7aJUgAOdjbMkjNFq72sHHo2j5arIlELP9uj6HQ/viewform?embedded=true" width="1194" height="1930" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekWuCOnl1l7aJUgAOdjbMkjNFq72sHHo2j5arIlELP9uj6HQ/viewform?embedded=true" width="1024" height="1930" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 </template>
 
@@ -263,11 +263,11 @@ export default defineComponent({
   margin-top: 834px;
 }
 .vineta-estandar {
-  max-width: 1194px;
+  max-width: 1024px;
   width: 100%;
 }
 .vineta-estandar-interactiva {
-  max-width: 1194px;
+  max-width: 1024px;
   width: 100%;
   cursor: pointer;
 }
