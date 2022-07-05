@@ -1,9 +1,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+
+// Componentes
 import Camera from "@/components/Camera.vue";
 import Polaroids from "@/components/Polaroids.vue";
 
+// URL del GIF a recargar con un click (Vineta explosion)
 import vineta5GIF from "@/assets/Vinetas/5_2.gif";
+
+// Componente para el cuerpo del comic
 
 export default defineComponent({
   name: "Comic",
@@ -13,10 +18,11 @@ export default defineComponent({
   },
   data() {
     return {
-      control_vineta5: true,
+      control_vineta5: true, // variable de control para cambiar de animacion en la viñeta 5
     };
   },
   methods: {
+    // Metodo que restaura la reproducción de un GIF desde el principio
     restartGIF(id: string, url: string) {
       const divImg = document.getElementById(id);
       if (divImg) {
@@ -25,12 +31,14 @@ export default defineComponent({
       }
     },
 
+    // Metodo de control para la viñeta 5
     mostrarVineta5(): void {
       this.control_vineta5 = !this.control_vineta5;
       this.restartGIF("vineta_5_2", vineta5GIF);
     },
   },
   computed: {
+    // Variable con la url del segundo GIF de la viñeta 5 (explosion)
     vineta5GIFurl(): string {
       return vineta5GIF;
     }
@@ -152,7 +160,7 @@ export default defineComponent({
    <img
       loading="lazy"
       alt="17"
-      class="vineta-prueba"
+      class="vineta-cambio-formato"
       src="../assets/Vinetas/17_Vineta17.png"
     />
     <img
@@ -227,7 +235,7 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/29_Vineta29.png"
     />
-         <img
+    <img
       loading="lazy"
       alt="Formulario"
       class="portada"
@@ -258,7 +266,7 @@ export default defineComponent({
   background-image: none;
 }
 
-.vineta-prueba {
+.vineta-cambio-formato {
   width: 100%;
   margin-top: 834px;
 
@@ -287,8 +295,8 @@ export default defineComponent({
 }
 
 .vineta-vacia {
-  height: 768;
-  min-height: 768;
+  height: 768px;
+  min-height: 768px;
   width: 100%;
 }
 
@@ -300,21 +308,4 @@ export default defineComponent({
   border-width: 10px;
 }
 
-.horizontales {
-  display: flex;
-  flex-direction: row;
-}
-
-.vineta-media-vacia {
-  max-height: 1024px;
-}
-
-.vineta-mitad-horizontal {
-  width: 50%;
-  height: 100%;
-}
-.vineta-mitad-horizontal-interactiva {
-  width: 100%;
-  height: 100%;
-}
 </style>

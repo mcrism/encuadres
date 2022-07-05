@@ -18,19 +18,11 @@ import Comic from '@/components/Comic.vue'
     </div>
   </header> -->
   <div class="body">
-  <div class="columnas">
-    <img alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
-    <!--<Comic2 />-->
-    <Comic />
-     <!-- <img
-      loading="lazy"
-      alt="Formulario"
-      class="portada"
-      src="@/assets/Formulario.png"
-    />
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekWuCOnl1l7aJUgAOdjbMkjNFq72sHHo2j5arIlELP9uj6HQ/viewform?embedded=true" width="1194" height="1930" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>  -->
-</div> 
-  <RouterView />
+    <div class="columnas">
+      <img alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
+      <Comic />
+    </div> 
+    <RouterView />
   </div>
 </template>
 

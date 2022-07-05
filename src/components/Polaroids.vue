@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+// Carga de las imagenes para el carrusel
 import polaroid0 from "@/assets/Polaroids/polaroid00.png";
 import polaroid1 from "@/assets/Polaroids/polaroid01.png";
 import polaroid2 from "@/assets/Polaroids/polaroid02.png";
@@ -17,19 +18,20 @@ import polaroid12 from "@/assets/Polaroids/polaroid12.png";
 import polaroid13 from "@/assets/Polaroids/polaroid13.png";
 import polaroid14 from "@/assets/Polaroids/polaroid14.png";
 
-
+// Este componente construye el carrusel interactivo con las fotos de India, Chuck y Deva
 export default defineComponent({
   name: "Polaroids",
   components: {},
   data() {
     return {
-      // carruselNo Inicializado: true,
     };
   },
   methods: {
+    // Metodo para inicializar la posicion del carrusel
     inicializarCarrusel() {
       this.mueveCarrusel(8)
     },
+    // Metodo para mover el carrusel al seleccionar una foto
     mueveCarrusel(id: number): void {
       const incrementoX = 300
       const incrementoY = 15
@@ -55,6 +57,7 @@ export default defineComponent({
     }
   },
   computed: {
+    // Variable de almacenamiento de las polaroids
     polaroids(): Array<Record<string, any>> {
       return [ 
         {url: polaroid0, index:"carrusel-1", id: 1}, 
@@ -84,7 +87,6 @@ export default defineComponent({
 
 <template>
   <div class="canvas">
-   
     <img src="../assets/Polaroids/fondo.png" class="coleccion-polaroids" />
     <div class="texto-superior">Pulsa las fotos para moverte hacia los lados. <BR/>¡Podrás ver todas las polaroids!</div>
     <div class="slider">
@@ -119,9 +121,6 @@ export default defineComponent({
   width: 100%;
   text-shadow: 3px 3px 1px black;
 }
-.polaroids {
-  text-align: center;
-}
 .coleccion-polaroids {
   width: 100%;
   max-width: 1024px;
@@ -140,31 +139,6 @@ export default defineComponent({
 .canvas::after {
   position: absolute;
   content: "";
-}
-
-.mycard {
-  height: 100%;
-  width: 100%;
-  max-width: 24rem;
-}
-.cardtitle {
-  font-weight: bold;
-  --tw-text-opacity: 1;
-  color: rgba(31, 41, 55, var(--tw-text-opacity));
-  text-align: center;
-}
-.cardimg {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2.75rem;
-  margin-bottom: 2.75rem;
-  max-height: 6rem;
-  border-radius: 9999px;
-}
-.carddescription {
-  --tw-text-opacity: 1;
-  color: rgba(107, 114, 128, var(--tw-text-opacity));
-  text-align: center;
 }
 
 body {
@@ -218,201 +192,5 @@ body {
 }
 .testimonials .item h2 {
   font-size: 14px;
-}
-.dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.dots label {
-  display: block;
-  height: 5px;
-  width: 5px;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: #413b52;
-  margin: 7px;
-  transition: transform 0.2s, color 0.2s;
-}
-
-/* First */
-#t-1:checked ~ .dots label[for="t-1"] {
-  transform: scale(2);
-  background-color: #fff;
-}
-#t-1:checked ~ .dots label[for="t-2"] {
-  transform: scale(1.5);
-}
-#t-1:checked ~ .testimonials label[for="t-1"] {
-  z-index: 15;
-}
-#t-1:checked ~ .testimonials label[for="t-2"] {
-  transform: translateX(300px) translateZ(-90px) translateY(-15px);
-
-  z-index: 14;
-}
-#t-1:checked ~ .testimonials label[for="t-3"] {
-  transform: translateX(600px) translateZ(-180px) translateY(-30px);
-  z-index: 13;
-}
-#t-1:checked ~ .testimonials label[for="t-4"] {
-  transform: translateX(900px) translateZ(-270px) translateY(-45px);
-  z-index: 12;
-}
-#t-1:checked ~ .testimonials label[for="t-5"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-60px);
-  z-index: 11;
-}
-#t-1:checked ~ .testimonials label[for="t-6"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-75px);
-  z-index: 10;
-}
-#t-1:checked ~ .testimonials label[for="t-7"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-90px);
-  z-index: 9;
-}
-#t-1:checked ~ .testimonials label[for="t-8"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-105px);
-  z-index: 8;
-}
-#t-1:checked ~ .testimonials label[for="t-9"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-120px);
-  z-index: 7;
-}
-#t-1:checked ~ .testimonials label[for="t-10"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-135px);
-  z-index: 6;
-}
-#t-1:checked ~ .testimonials label[for="t-11"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-150px);
-  z-index: 5;
-}
-#t-1:checked ~ .testimonials label[for="t-12"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-165px);
-  z-index: 4;
-}
-#t-1:checked ~ .testimonials label[for="t-13"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-60px);
-  z-index: 3;
-}
-#t-1:checked ~ .testimonials label[for="t-14"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-180px);
-  z-index: 2;
-}
-#t-1:checked ~ .testimonials label[for="t-15"] {
-  transform: translateX(1200px) translateZ(-360px) translateY(-195px);
-  z-index: 1;
-}
-
-/* Second */
-#t-2:checked ~ .dots label[for="t-1"] {
-  transform: scale(1.5);
-}
-#t-2:checked ~ .dots label[for="t-2"] {
-  transform: scale(2);
-  background-color: #fff;
-}
-#t-2:checked ~ .dots label[for="t-3"] {
-  transform: scale(1.5);
-}
-#t-2:checked ~ .testimonials label[for="t-1"] {
-  transform: translateX(-300px) translateZ(-90px) translateY(-15px);
-}
-#t-2:checked ~ .testimonials label[for="t-2"] {
-  z-index: 3;
-}
-#t-2:checked ~ .testimonials label[for="t-3"] {
-  transform: translateX(300px) translateZ(-90px) translateY(-15px);
-  z-index: 2;
-}
-#t-2:checked ~ .testimonials label[for="t-4"] {
-  transform: translateX(600px) translateZ(-180px) translateY(-30px);
-  z-index: 1;
-}
-#t-2:checked ~ .testimonials label[for="t-5"] {
-  transform: translateX(900px) translateZ(-270px) translateY(-45px);
-}
-
-/* Third */
-#t-3:checked ~ .dots label[for="t-2"] {
-  transform: scale(1.5);
-}
-#t-3:checked ~ .dots label[for="t-3"] {
-  transform: scale(2);
-  background-color: #fff;
-}
-#t-3:checked ~ .dots label[for="t-4"] {
-  transform: scale(1.5);
-}
-#t-3:checked ~ .testimonials label[for="t-1"] {
-  transform: translateX(-600px) translateZ(-180px) translateY(-30px);
-}
-#t-3:checked ~ .testimonials label[for="t-2"] {
-  transform: translateX(-300px) translateZ(-90px) translateY(-15px);
-}
-#t-3:checked ~ .testimonials label[for="t-3"] {
-  z-index: 3;
-}
-#t-3:checked ~ .testimonials label[for="t-4"] {
-  transform: translateX(300px) translateZ(-90px) translateY(-15px);
-  z-index: 2;
-}
-#t-3:checked ~ .testimonials label[for="t-5"] {
-  transform: translateX(600px) translateZ(-180px) translateY(-30px);
-}
-
-/* Fourth */
-#t-4:checked ~ .dots label[for="t-3"] {
-  transform: scale(1.5);
-}
-#t-4:checked ~ .dots label[for="t-4"] {
-  transform: scale(2);
-  background-color: #fff;
-}
-#t-4:checked ~ .dots label[for="t-5"] {
-  transform: scale(1.5);
-}
-#t-4:checked ~ .testimonials label[for="t-1"] {
-  transform: translateX(-900px) translateZ(-270px) translateY(-45px);
-}
-#t-4:checked ~ .testimonials label[for="t-2"] {
-  transform: translateX(-600px) translateZ(-180px) translateY(-30px);
-}
-#t-4:checked ~ .testimonials label[for="t-3"] {
-  transform: translateX(-300px) translateZ(-90px) translateY(-15px);
-  z-index: 2;
-}
-#t-4:checked ~ .testimonials label[for="t-4"] {
-  z-index: 3;
-}
-#t-4:checked ~ .testimonials label[for="t-5"] {
-  transform: translateX(300px) translateZ(-90px) translateY(-15px);
-}
-
-/* Fifth */
-#t-5:checked ~ .dots label[for="t-4"] {
-  transform: scale(1.5);
-}
-#t-5:checked ~ .dots label[for="t-5"] {
-  transform: scale(2);
-  background-color: #fff;
-}
-#t-5:checked ~ .testimonials label[for="t-1"] {
-  transform: translateX(-1200px) translateZ(-360px) translateY(-60px);
-}
-#t-5:checked ~ .testimonials label[for="t-2"] {
-  transform: translateX(-900px) translateZ(-270px) translateY(-45px);
-  z-index: 1;
-}
-#t-5:checked ~ .testimonials label[for="t-3"] {
-  transform: translateX(-600px) translateZ(-180px) translateY(-30px);
-  z-index: 2;
-}
-#t-5:checked ~ .testimonials label[for="t-4"] {
-  transform: translateX(-300px) translateZ(-90px) translateY(-15px);
-  z-index: 3;
-}
-#t-5:checked ~ .testimonials label[for="t-5"] {
-  z-index: 4;
 }
 </style>

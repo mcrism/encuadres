@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+// URLs de las imagenes y de los GIFs
 import indiaURL from "@/assets/PersonajesCamara/IndiaPosicionada.png";
 import chuckURL from "@/assets/PersonajesCamara/ChuckPosicionado.png";
 import chuckPensamientoURL from "@/assets/PersonajesCamara/ChuckPensamiento.gif";
@@ -10,33 +11,39 @@ import indiaDeseoURL from "@/assets/PersonajesCamara/IndiaDeseo.gif";
 import indiaPesadillaURL from "@/assets/PersonajesCamara/IndiaPesadilla.gif";
 import chuckPesadillaURL from "@/assets/PersonajesCamara/ChuckPesadilla.gif";
 
-
+// Este componente construye la interfaz de la cámara de Click, permitiendo elegir el personaje a fotografiar (India o Chuck)
+// y el filtro con el que sacar la polaroid (pensamientos, deseos o pesadillas)
 export default defineComponent({
   name: "Camera",
   data() {
     return {
+      // Variables de control de personajes
       chuckSelected: true,
       indiaSelected: false,
+      // Variable de control de polaroid
       mostrarPolaroid: false,
+      // Variables de control del filtro de Click con el que sacar la polaroid
       modoPensamientos: false,
       modoDeseos: false,
       modoPesadillas: false,
+      // Polaroid a mostrar
       polaroid: "",
     };
   },
-  components: {
-  },
   methods: {
+    // Accion al seleccionar a Chuck en el selector de personaje
     seleccionarChuck(): void {
       this.chuckSelected = true;
       this.indiaSelected = false;
       this.mostrarPolaroid = false;
     },
+    // Accion al seleccionar a India en el selector de personaje
     seleccionarIndia(): void {
       this.chuckSelected = false;
       this.indiaSelected = true;
       this.mostrarPolaroid = false;
     },
+    // Accion al seleccionar el filtro de pensamiento
     mostrarPolaroidPensamiento(): void {
       if (this.chuckSelected) {
         this.polaroid = chuckPensamientoURL;
@@ -45,6 +52,7 @@ export default defineComponent({
       }
       this.mostrarPolaroid = true;
     },
+    // Accion al seleccionar el filtro de deseos
     mostrarPolaroidDeseo(): void { 
       if (this.chuckSelected) {
         this.polaroid = chuckDeseoURL;
@@ -54,6 +62,7 @@ export default defineComponent({
       this.mostrarPolaroid = true;
       
     },
+    // Accion al seleccionar el filtro de pesadillas
     mostrarPolaroidPesadilla(): void {
       if (this.chuckSelected) {
         this.polaroid = chuckPesadillaURL;
@@ -62,11 +71,13 @@ export default defineComponent({
       }
        this.mostrarPolaroid = true;
     },
+    // Accion al pulsar el icono de cerrar la polaroid
     cerrarPolaroid(): void {
       this.mostrarPolaroid = false;
     }
   },
   computed: {
+    // Clases de control para los estilos del selector de personajes, resaltando el personaje seleccionado
     chuckClass(): string {
       if (this.chuckSelected) {
         return "active";
@@ -88,13 +99,14 @@ export default defineComponent({
         return "texto-sin-seleccionar";
       }
     },
-     indiaTexto(): string {
+    indiaTexto(): string {
       if (this.indiaSelected) {
         return "texto-seleccionado";
       } else {
         return "texto-sin-seleccionar";
       }
     },
+    // Variable con la URL de la imagen fija del personaje seleccionado
     personajeSeleccionado(): string {
       if (this.chuckSelected) {
         return chuckURL;
@@ -110,7 +122,6 @@ export default defineComponent({
 <template>
 		<div class="camera-canvas">
 			<img class="vineta-estandar" :src="personajeSeleccionado" />
-      <!-- <div class="texto-explicativo"> Cada botón es un filtro de Click. ¿Qué pasará si los pulsas? También puedes cambiar de personaje en el selector de la derecha</div> -->
       <img src="../assets/PersonajesCamara/FondoCamara.png" class="imagen-fondo" />
       <div class="selector-texto">SELECCIONA UN PERSONAJE</div>
 			<div id="pagination">
@@ -126,7 +137,6 @@ export default defineComponent({
         </div>
       </div>
       <div v-if="mostrarPolaroid">
-        <!-- <div id="page-mask"></div> -->
         <div  class="polaroid-completa">
           <img class="icono-cerrar" title="Cerrar la polaroid" @click="cerrarPolaroid()" src="@/assets/icons/Close.svg" />  
           <img class="polaroid" :src="polaroid" />
@@ -416,16 +426,6 @@ export default defineComponent({
   bottom: 60%;
   box-shadow: 5px 5px 5px black;
 }
-
-.cargador {
-  width: 100%;
-  height: 100%;
-  max-width: 30%;
-  position: absolute;
-  z-index: 7;
-  left: 35%;
-  transform: translateY(-350px);
-  }
 
 .icono-cerrar {
   position: absolute;
