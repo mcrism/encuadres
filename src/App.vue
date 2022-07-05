@@ -1,7 +1,28 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from "vue";
+
 import { RouterLink, RouterView } from 'vue-router'
 import Comic from '@/components/Comic.vue'
 
+export default defineComponent({
+  name: "AppComic",
+  components: {
+    Comic,
+  },
+  data() {
+    return {
+      mostrar_comic: true, // variable de control para cambiar de animacion en la viñeta 5
+    };
+  },
+  methods: {
+    mostrarPersonajes(): void {
+      this.mostrar_comic = false;
+    },
+    mostrarComic(): void{
+      this.mostrar_comic = true;
+    }
+  }
+  });
 </script>
 
 <template>
@@ -19,8 +40,17 @@ import Comic from '@/components/Comic.vue'
   </header> -->
   <div class="body">
     <div class="columnas">
-      <img alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
-      <Comic />
+      <img alt="Header" class="portada" src="@/assets/Header.png"/>
+      <div class="header">
+      <div class="buttons-group">
+        <div class='button' @click="mostrarComic()">LEER</div>
+        <div class='button' @click="mostrarPersonajes()">PERSONAJES</div>
+        <div class='button'>MEMORIA</div>
+        <div class='button'><a class="link" href="https://github.com/mcrism/encuadres" target="_blank">GITHUB</a></div>
+      </div>
+      </div>
+      <img v-if="mostrar_comic" alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
+      <Comic v-if="mostrar_comic"></Comic>
     </div> 
     <RouterView />
   </div>
@@ -72,5 +102,72 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.button {
+  width: fit-content;
+  display: flex;
+  overflow: hidden;
+  margin: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 0px black;
+  color: #fff;
+  border: 0 none;
+  border-radius: 36px;
+  font-size: 25px;
+  font-family: "CCMonsterMashMedium";
+  font-weight: 500;
+  line-height: 1.3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 180px;
+  color:#4483BA;
+  background:#FDE147;
+  margin-left: 50px;
+  border: 3px solid #F9AC5F;
+  box-shadow: 2px 5px 0px black;
+}
+.button:hover {
+  transition: all 150ms linear;
+  opacity: 0.55;
+}
+.button:active {
+  transition: all 150ms linear;
+  opacity: 0.75;
+}
+.button:focus {
+  outline: 1px dotted #959595;
+  outline-offset: -4px;
+}
+
+.buttons-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1024px;
+  min-width: 1024px;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.header {
+  background-color: #5C83B7;
+}
+.link {
+  text-decoration: none;
+  color:#4483BA;
 }
 </style>
