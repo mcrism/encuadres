@@ -1,25 +1,48 @@
-# Encuadres
+# Encuadres, un cómic animado e interactivo
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto construye el cómic Encuadres, un cómic animado e interactivo, que puede leerse en https://encuadres.cdalvaro.io
 
-## Recommended IDE Setup
+<div align=center>
+  <img src="public/README/banner.png" alt="UNIR" title="UNIR" hspace="30" height="196px" />
+</div>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+## Table of Contents
 
-## Type Support for `.vue` Imports in TS
+- [Abstract](#abstract)
+- [Resumen de la historia](#resumen-de-la-historia)
+- [Organización del código](#organización-del-código)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Abstract
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Los medios digitales ofrecen muchas posibilidades para contar historias de una manera única y alejada de los medios tradicionales en papel. Este trabajo explora estas posibilidades, acotando la problemática al **mundo del cómic enfocado a un público infantil.** Para ello, se sigue una aproximación que parte desde el mundo de la animación y acaba en la construcción de un **prototipo final, animado e interactivo,** que puede leerse en el siguiente enlace: https://encuadres.cdalvaro.io
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Este trabajo parte de una investigación de los cómics digitales y de aspectos relevantes para un prototipo digital. Con esta base se abarca el proceso de diseño completo: guión y storyboard, diseño y rigging de personajes, modelado 3D de escenarios, animaciones y construcción de un prototipo interactivo final. Este prototipo en formato web se ha distribuido entre el público objetivo, permitiendo la evaluación del mismo como solución válida frente al problema de partida.
 
-## Customize configuration
+## Resumen de la historia
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+India y Chuck son dos amigos que pasan los veranos en un pueblo de montaña. Un día descubren un paquete perdido. Tiene... ¡una cámara de fotos mágica! La cámara se llama Click y hace fotos mágicas que muestran lo que los niños piensan, sus deseos o sus miedos. Juntos, consiguen hacer una foto que abre una puerta a un mundo mágico. Allí les esperan un montón de aventuras...
+
+## Organización del código
+
+Recursos, imágenes y animaciones utilizadas en el proyecto:
+
+- Tipografías: en `src/assets/fonts`
+
+- Iconos: en `src/assets/icons`
+
+- Colección de viñetas estáticas y viñetas animadas básicas: `src/assets/Vinetas`
+
+- Imágenes y animaciones utilizadas en la viñeta interactiva que muestra la interfaz de Click: `src/assets/PersonajesCamara`
+
+- Colección de polaroids que se muestran en el carrusel de imágenes: `src/assets/Polaroids`
+
+Este proyecto utiliza tres componentes diferentes, que se pueden consultar en `src/components`:
+
+- **`Comic.vue`:** componente con el cuerpo del cómic. Carga todas las viñetas estáticas y llama a los componentes definidos en `Camera.vue`y `Polaroids.vue` en el orden que corresponde. Este componente se encarga, además, de gestionar la viñeta interactiva de la explosión de la caja y la primera aparición de Click. Utiliza la información de `src/assets/Vinetas`
+
+- **`Camera.vue`:** componente que construye la interfaz de Click. Permite la selección del personaje (India o Chuck) y la elección del filtro con el sacar la fotografía (pensamientos, deseos o pesadillas). Cada vez que se pulsa un filtro aparece la animación correspodiente, que puede cerrarse pulsando el icono de cerrar. Utiliza la información de `src/assets/PersonajesCamara`
+
+- **`Polaroids.vue`:** componente que construye el carrusel de fotografías. Cada vez que se selecciona una foto, reajusta las posiciones del resto de polaroids. Utiliza la información de  `src/assets/Polaroids`
 
 ## Project Setup
 
