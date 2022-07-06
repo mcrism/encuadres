@@ -13,16 +13,24 @@ export default defineComponent({
     return {
       mostrar_comic: true,
       mostrar_personajes: false,
+      mostrar_mundos: false,
     };
   },
   methods: {
     mostrarPersonajes(): void {
       this.mostrar_comic = false;
       this.mostrar_personajes = true;
+      this.mostrar_mundos = false;
     },
     mostrarComic(): void{
       this.mostrar_comic = true;
       this.mostrar_personajes = false;
+      this.mostrar_mundos = false;
+    },
+    mostrarMundos(): void {
+      this.mostrar_comic = false;
+      this.mostrar_personajes = false;
+      this.mostrar_mundos = true;
     }
   }
   });
@@ -48,6 +56,7 @@ export default defineComponent({
       <div class="buttons-group">
         <div class='button' @click="mostrarComic()">LEER</div>
         <div class='button' @click="mostrarPersonajes()">PERSONAJES</div>
+        <div class='button' @click="mostrarMundos()">MUNDOS</div>
         <div class='button'>MEMORIA</div>
         <div class='button'><a class="link" href="https://github.com/mcrism/encuadres" target="_blank">GITHUB</a></div>
       </div>
@@ -55,6 +64,7 @@ export default defineComponent({
       <img v-if="mostrar_comic" alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
       <Comic v-if="mostrar_comic"></Comic>
       <img v-if="mostrar_personajes" alt="Personajes" class="portada" src="@/assets/Personajes.png"/>
+      <img v-if="mostrar_mundos" alt="Mundos" class="portada" src="@/assets/Mundos.png"/>
     </div> 
     <RouterView />
   </div>
@@ -112,8 +122,8 @@ body {
   width: fit-content;
   display: flex;
   overflow: hidden;
-  margin: 10px;
-  padding: 6px 12px;
+  margin: 5px;
+  padding: 6px 8px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -138,10 +148,10 @@ body {
   appearance: none;
   justify-content: center;
   align-items: center;
-  flex: 0 0 180px;
+  flex: 0 0 175px;
   color:#4483BA;
   background:#FDE147;
-  margin-left: 50px;
+  margin-left: 20px;
   border: 3px solid #F9AC5F;
   box-shadow: 2px 5px 0px black;
 }

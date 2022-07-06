@@ -44,6 +44,8 @@ Este proyecto utiliza tres componentes diferentes, que se pueden consultar en `s
 
 - **`Polaroids.vue`:** componente que construye el carrusel de fotografías. Cada vez que se selecciona una foto, reajusta las posiciones del resto de polaroids. Utiliza la información de  `src/assets/Polaroids`
 
+Finalmente, la aplicación está construida en **`App.vue`,** desde donde se llama al componente `Comic`. También se construye el banner superior con los botones de selección de sección y se cargan las secciones de personajes y de imágenes. Por último, incluye dos botones más que son enlaces a la memoria del trabajo y a esta página de GitHub.
+
 ## Project Setup
 
 ```sh
