@@ -3,7 +3,7 @@
 Este proyecto construye el cómic Encuadres, un cómic animado e interactivo, que puede leerse en https://encuadres.cdalvaro.io
 
 <div align=center>
-  <img src="public/README/banner.png" alt="Encuadres" title="Encuadres" hspace="30" height="196px" />
+  <img src="public/README/Banner.png" alt="Encuadres" title="Encuadres" hspace="30" height="196px" />
 </div>
 
 ## Table of Contents

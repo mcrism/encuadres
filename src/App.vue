@@ -11,15 +11,18 @@ export default defineComponent({
   },
   data() {
     return {
-      mostrar_comic: true, // variable de control para cambiar de animacion en la viñeta 5
+      mostrar_comic: true,
+      mostrar_personajes: false,
     };
   },
   methods: {
     mostrarPersonajes(): void {
       this.mostrar_comic = false;
+      this.mostrar_personajes = true;
     },
     mostrarComic(): void{
       this.mostrar_comic = true;
+      this.mostrar_personajes = false;
     }
   }
   });
@@ -51,6 +54,7 @@ export default defineComponent({
       </div>
       <img v-if="mostrar_comic" alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
       <Comic v-if="mostrar_comic"></Comic>
+      <img v-if="mostrar_personajes" alt="Personajes" class="portada" src="@/assets/Personajes.png"/>
     </div> 
     <RouterView />
   </div>
