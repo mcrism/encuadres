@@ -2,6 +2,8 @@
 
 Este proyecto construye el cómic Encuadres, un cómic animado e interactivo, que puede leerse en https://encuadres.cdalvaro.io
 
+Este cómic es mi Trabajo de Fin de Grado, del Grado en Diseño Digital de la Universidad Internacional de la Rioja, UNIR.
+
 <div align=center>
   <img src="public/README/Banner.png" alt="Encuadres" title="Encuadres" hspace="30" height="196px" />
 </div>
