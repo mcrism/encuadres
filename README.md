@@ -5,7 +5,7 @@ Este proyecto construye el cómic Encuadres, un cómic animado e interactivo, qu
 Este cómic es mi Trabajo de Fin de Grado, del Grado en Diseño Digital de la Universidad Internacional de la Rioja, UNIR.
 
 <div align=center>
-  <img src="public/README/Banner.png" alt="Encuadres" title="Encuadres" hspace="30" height="196px" />
+  <img src="public/README/Banner.png" alt="Encuadres" title="Encuadres" />
 </div>
 
 ## Table of Contents
