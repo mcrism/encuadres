@@ -57,7 +57,14 @@ export default defineComponent({
           <div class="button" @click="mostrarComic()">LEER</div>
           <div class="button" @click="mostrarPersonajes()">PERSONAJES</div>
           <div class="button" @click="mostrarMundos()">MUNDOS</div>
-          <div class="button">MEMORIA</div>
+          <div class="button">
+            <a
+              class="link"
+              href="https://github.com/mcrism/encuadres/releases/download/tfg/Predeposito.pdf"
+              target="_blank"
+              >MEMORIA</a
+            >
+          </div>
           <div class="button">
             <a
               class="link"
