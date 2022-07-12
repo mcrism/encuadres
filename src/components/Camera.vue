@@ -53,14 +53,13 @@ export default defineComponent({
       this.mostrarPolaroid = true;
     },
     // Accion al seleccionar el filtro de deseos
-    mostrarPolaroidDeseo(): void { 
+    mostrarPolaroidDeseo(): void {
       if (this.chuckSelected) {
         this.polaroid = chuckDeseoURL;
       } else {
         this.polaroid = indiaDeseoURL;
       }
       this.mostrarPolaroid = true;
-      
     },
     // Accion al seleccionar el filtro de pesadillas
     mostrarPolaroidPesadilla(): void {
@@ -69,12 +68,12 @@ export default defineComponent({
       } else {
         this.polaroid = indiaPesadillaURL;
       }
-       this.mostrarPolaroid = true;
+      this.mostrarPolaroid = true;
     },
     // Accion al pulsar el icono de cerrar la polaroid
     cerrarPolaroid(): void {
       this.mostrarPolaroid = false;
-    }
+    },
   },
   computed: {
     // Clases de control para los estilos del selector de personajes, resaltando el personaje seleccionado
@@ -113,36 +112,52 @@ export default defineComponent({
       } else {
         return indiaURL;
       }
-    }
+    },
   },
 });
 </script>
 
 
 <template>
-		<div class="camera-canvas">
-			<img class="vineta-estandar" :src="personajeSeleccionado" />
-      <img src="../assets/PersonajesCamara/FondoCamara.png" class="imagen-fondo" />
-      <div class="selector-texto">SELECCIONA UN PERSONAJE</div>
-			<div id="pagination">
-        <div class="horizontal" @click="seleccionarChuck()"><div :class="chuckTexto">Chuck</div> <button :class="chuckClass" data-slide="0"></button></div>
-				<div class="horizontal" @click="seleccionarIndia()"><div :class="indiaTexto">India</div> <button :class="indiaClass" data-slide="1"></button></div> 
-			</div>
-      <div class="button-text">
-        <div class="texto-explicativo">Pulsa un filtro para sacar una foto</div>
-        <div class="button-container">
-          <div class='button' @click="mostrarPolaroidPensamiento()">PENSAMIENTOS</div>
-          <div class='button' @click="mostrarPolaroidDeseo()">DESEOS</div>
-          <div class='button' @click="mostrarPolaroidPesadilla()">PESADILLAS</div>
-        </div>
+  <div class="camera-canvas">
+    <img class="vineta-estandar" :src="personajeSeleccionado" />
+    <img
+      src="../assets/PersonajesCamara/FondoCamara.png"
+      class="imagen-fondo"
+    />
+    <div class="selector-texto">SELECCIONA UN PERSONAJE</div>
+    <div id="pagination">
+      <div class="horizontal" @click="seleccionarChuck()">
+        <div :class="chuckTexto">Chuck</div>
+        <button :class="chuckClass" data-slide="0"></button>
       </div>
-      <div v-if="mostrarPolaroid">
-        <div  class="polaroid-completa">
-          <img class="icono-cerrar" title="Cerrar la polaroid" @click="cerrarPolaroid()" src="@/assets/icons/Close.svg" />  
-          <img class="polaroid" :src="polaroid" />
+      <div class="horizontal" @click="seleccionarIndia()">
+        <div :class="indiaTexto">India</div>
+        <button :class="indiaClass" data-slide="1"></button>
+      </div>
+    </div>
+    <div class="button-text">
+      <div class="texto-explicativo">Pulsa un filtro para sacar una foto</div>
+      <div class="button-container">
+        <div class="button" @click="mostrarPolaroidPensamiento()">
+          PENSAMIENTOS
         </div>
-      </div> 
-		</div>
+        <div class="button" @click="mostrarPolaroidDeseo()">DESEOS</div>
+        <div class="button" @click="mostrarPolaroidPesadilla()">PESADILLAS</div>
+      </div>
+    </div>
+    <div v-if="mostrarPolaroid">
+      <div class="polaroid-completa">
+        <img
+          class="icono-cerrar"
+          title="Cerrar la polaroid"
+          @click="cerrarPolaroid()"
+          src="@/assets/icons/Close.svg"
+        />
+        <img class="polaroid" :src="polaroid" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -158,7 +173,7 @@ export default defineComponent({
   right: 0;
   bottom: 0;
   top: 0;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 6;
 }
 .button-container {
@@ -181,9 +196,9 @@ export default defineComponent({
   padding: 9px 12px;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   transition: all 150ms linear;
   text-align: center;
   white-space: nowrap;
@@ -204,10 +219,10 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   flex: 0 0 250px;
-  color:#4483BA;
-  background:#FDE147;
+  color: #4483ba;
+  background: #fde147;
   margin-left: 50px;
-  border: 3px solid #F9AC5F;
+  border: 3px solid #f9ac5f;
   box-shadow: 2px 5px 0px black;
 }
 .button:hover {
@@ -225,11 +240,11 @@ export default defineComponent({
 .camera-canvas {
   width: 100%;
   text-align: start;
-  background-color:#5C82B7;
+  background-color: #5c82b7;
   z-index: 0;
 }
 .imagen-fondo {
-  position:absolute;
+  position: absolute;
   width: 100%;
   z-index: -1;
   max-width: 1024px;
@@ -370,8 +385,7 @@ export default defineComponent({
   transform: translateY(180%);
   right: 50px;
   z-index: 6;
-  width: 100%
-
+  width: 100%;
 }
 #pagination button {
   display: block;
@@ -414,7 +428,8 @@ export default defineComponent({
   border-radius: 100%;
   border: 1px solid white;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out, width 0.4s ease-in-out, height 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, width 0.4s ease-in-out,
+    height 0.4s ease-in-out;
 }
 
 .polaroid {

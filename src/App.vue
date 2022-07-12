@@ -1,8 +1,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { RouterLink, RouterView } from 'vue-router'
-import Comic from '@/components/Comic.vue'
+import { RouterLink, RouterView } from "vue-router";
+import Comic from "@/components/Comic.vue";
 
 export default defineComponent({
   name: "AppComic",
@@ -22,7 +22,7 @@ export default defineComponent({
       this.mostrar_personajes = true;
       this.mostrar_mundos = false;
     },
-    mostrarComic(): void{
+    mostrarComic(): void {
       this.mostrar_comic = true;
       this.mostrar_personajes = false;
       this.mostrar_mundos = false;
@@ -31,13 +31,13 @@ export default defineComponent({
       this.mostrar_comic = false;
       this.mostrar_personajes = false;
       this.mostrar_mundos = true;
-    }
-  }
-  });
+    },
+  },
+});
 </script>
 
 <template>
-<!--   <header>
+  <!--   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -51,41 +51,60 @@ export default defineComponent({
   </header> -->
   <div class="body">
     <div class="columnas">
-      <img alt="Header" class="portada" src="@/assets/Header.png"/>
+      <img alt="Header" class="portada" src="@/assets/Header.png" />
       <div class="header">
-      <div class="buttons-group">
-        <div class='button' @click="mostrarComic()">LEER</div>
-        <div class='button' @click="mostrarPersonajes()">PERSONAJES</div>
-        <div class='button' @click="mostrarMundos()">MUNDOS</div>
-        <div class='button'>MEMORIA</div>
-        <div class='button'><a class="link" href="https://github.com/mcrism/encuadres" target="_blank">GITHUB</a></div>
+        <div class="buttons-group">
+          <div class="button" @click="mostrarComic()">LEER</div>
+          <div class="button" @click="mostrarPersonajes()">PERSONAJES</div>
+          <div class="button" @click="mostrarMundos()">MUNDOS</div>
+          <div class="button">MEMORIA</div>
+          <div class="button">
+            <a
+              class="link"
+              href="https://github.com/mcrism/encuadres"
+              target="_blank"
+              >GITHUB</a
+            >
+          </div>
+        </div>
       </div>
-      </div>
-      <img v-if="mostrar_comic" alt="Introduccion" class="portada" src="@/assets/Vinetas/0_Portada.png"/>
+      <img
+        v-if="mostrar_comic"
+        alt="Introduccion"
+        class="portada"
+        src="@/assets/Vinetas/0_Portada.png"
+      />
       <Comic v-if="mostrar_comic"></Comic>
-      <img v-if="mostrar_personajes" alt="Personajes" class="portada" src="@/assets/Personajes.png"/>
-      <img v-if="mostrar_mundos" alt="Mundos" class="portada" src="@/assets/Mundos.png"/>
-    </div> 
+      <img
+        v-if="mostrar_personajes"
+        alt="Personajes"
+        class="portada"
+        src="@/assets/Personajes.png"
+      />
+      <img
+        v-if="mostrar_mundos"
+        alt="Mundos"
+        class="portada"
+        src="@/assets/Mundos.png"
+      />
+    </div>
     <RouterView />
   </div>
 </template>
 
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 
 @font-face {
   font-family: "CCMonsterMashMedium";
   src: local("CCMonsterMashMedium"),
-   url(./assets/fonts/CCMonsterMashMedium.ttf) format("truetype");
+    url(./assets/fonts/CCMonsterMashMedium.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "ComicBook";
-  src: local("ComicBook"),
-   url(./assets/fonts/ComicBook.otf) format("truetype");
+  src: local("ComicBook"), url(./assets/fonts/ComicBook.otf) format("truetype");
 }
-
-
 
 #app {
   width: 100%;
@@ -106,11 +125,10 @@ body {
   outline-offset: 0.125rem;
 }
 
-
 .portada {
-    width: 100%;
-    max-width: 1024px;
-  }
+  width: 100%;
+  max-width: 1024px;
+}
 
 .columnas {
   display: flex;
@@ -126,9 +144,9 @@ body {
   padding: 6px 8px;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   transition: all 150ms linear;
   text-align: center;
   white-space: nowrap;
@@ -149,10 +167,10 @@ body {
   justify-content: center;
   align-items: center;
   flex: 0 0 175px;
-  color:#4483BA;
-  background:#FDE147;
+  color: #4483ba;
+  background: #fde147;
   margin-left: 20px;
-  border: 3px solid #F9AC5F;
+  border: 3px solid #f9ac5f;
   box-shadow: 2px 5px 0px black;
 }
 .button:hover {
@@ -178,10 +196,10 @@ body {
   margin-bottom: 20px;
 }
 .header {
-  background-color: #5C83B7;
+  background-color: #5c83b7;
 }
 .link {
   text-decoration: none;
-  color:#4483BA;
+  color: #4483ba;
 }
 </style>

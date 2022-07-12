@@ -41,7 +41,7 @@ export default defineComponent({
     // Variable con la url del segundo GIF de la viñeta 5 (explosion)
     vineta5GIFurl(): string {
       return vineta5GIF;
-    }
+    },
   },
 });
 </script>
@@ -143,7 +143,7 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/13_Vineta13.png"
     />
-     <img
+    <img
       loading="lazy"
       alt="14"
       class="vineta-estandar"
@@ -156,8 +156,8 @@ export default defineComponent({
       src="../assets/Vinetas/15_Vineta15.png"
     />
     <div><Camera></Camera></div>
-    <div ><Polaroids class="polaroids"></Polaroids></div>
-   <img
+    <div><Polaroids class="polaroids"></Polaroids></div>
+    <img
       loading="lazy"
       alt="17"
       class="vineta-cambio-formato"
@@ -181,7 +181,7 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/20_Vineta20.png"
     />
-     <img
+    <img
       loading="lazy"
       alt="21"
       class="vineta-estandar"
@@ -199,7 +199,7 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/23_Vineta23.png"
     />
-     <img
+    <img
       loading="lazy"
       alt="24"
       class="vineta-estandar"
@@ -223,7 +223,7 @@ export default defineComponent({
       class="vineta-estandar"
       src="../assets/Vinetas/27_Vineta27.png"
     />
-     <img
+    <img
       loading="lazy"
       alt="28"
       class="vineta-estandar"
@@ -241,7 +241,15 @@ export default defineComponent({
       class="portada"
       src="../assets/Formulario.png"
     />
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekWuCOnl1l7aJUgAOdjbMkjNFq72sHHo2j5arIlELP9uj6HQ/viewform?embedded=true" width="1024" height="1930" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSekWuCOnl1l7aJUgAOdjbMkjNFq72sHHo2j5arIlELP9uj6HQ/viewform?embedded=true"
+      width="1024"
+      height="1930"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      >Loading…</iframe
+    >
   </div>
 </template>
 
@@ -259,7 +267,7 @@ export default defineComponent({
   flex-direction: column;
   background-color: var(--color-yellow);
   background-image: radial-gradient(var(--color-dark-yellow) 20%, transparent 0),
-  radial-gradient(var(--color-dark-yellow) 20%, transparent 0);
+    radial-gradient(var(--color-dark-yellow) 20%, transparent 0);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
   background-color: white;
@@ -269,7 +277,6 @@ export default defineComponent({
 .vineta-cambio-formato {
   width: 100%;
   margin-top: 834px;
-
 }
 .vineta-estandar {
   max-width: 1024px;
@@ -291,7 +298,6 @@ export default defineComponent({
 .vineta-solape-superior {
   width: 100%;
   margin-top: -50px;
-  
 }
 
 .vineta-vacia {
@@ -303,9 +309,8 @@ export default defineComponent({
 .vineta-media {
   height: 50%;
   width: 100%;
-    border-style: solid;
+  border-style: solid;
   border-color: white;
   border-width: 10px;
 }
-
 </style>
